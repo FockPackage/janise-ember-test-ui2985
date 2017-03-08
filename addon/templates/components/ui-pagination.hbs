@@ -1,0 +1,13 @@
+{{#if leftBt}}
+  {{ui-button icon='arrows-16px-1_minimal-left' disabled=leftDisabled onClick=(action handlePrePage)}}
+{{/if}}
+{{#each items as |item|}}
+  {{ui-button (sum item 1) color=(if (eq item currentPage) 'border-orange') click=(action handleSelectIndex item)}}
+{{/each}}
+{{ui-input placeholder=(html-safe (concat '最大' count '页')) error=error value=value inside='inside' onKeyUp=(action 'inputKeyUp')  onEnter=(action 'handleSelectIndex')}}
+{{#if rightBt}}
+  {{ui-button icon='arrows-16px-1_minimal-right' disabled=rightDisabled onClick=(action handleNextPage)}}
+{{/if}}
+
+{{ui-input placeholder='内容搜索' icon='ui-16px-1_zoom' inside='inside' onEnter=(action handleSearch)}}
+

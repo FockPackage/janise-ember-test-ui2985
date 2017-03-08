@@ -1,0 +1,42 @@
+<section>
+  {{#ui-form}}
+    {{ui-input size='large' placeholder='placeholderIcon' placeholderIcon='ui-16px-1_calendar-60'}}
+    {{ui-input size='large' placeholder='placeholderIcon' placeholderIcon='ui-16px-1_calendar-60' readonly=true}}
+    {{ui-input size='large' placeholder='placeholderIcon' placeholderIcon='ui-16px-1_calendar-60' disabled=true}}
+  {{/ui-form}}
+  <div class="preview-divider"></div>
+  {{#ui-form}}
+    {{ui-input size='large' placeholder='Icon' icon='ui-16px-1_calendar-60'}}
+    {{ui-input size='large' placeholder='Icon' icon='ui-16px-1_calendar-60' readonly=true}}
+    {{ui-input size='large' placeholder='Icon' icon='ui-16px-1_calendar-60' disabled=true}}
+  {{/ui-form}}
+  <div class="preview-divider"></div>
+  {{#ui-form}}
+    {{ui-input size='large' placeholder='Icon inside' icon='ui-16px-1_zoom' inside='inside'}}
+    {{ui-input size='large' placeholder='Icon inside' icon='ui-16px-1_zoom' inside='inside' readonly=true}}
+    {{ui-input size='large' placeholder='Icon inside' icon='ui-16px-1_zoom' inside='inside' disabled=true}}
+  {{/ui-form}}
+  <div class="preview-divider"></div>
+  {{#ui-form}}
+    {{ui-input size='large' placeholder='placeholderIcon' placeholderIcon='ui-16px-1_calendar-60' error=(fake "lorem.sentence")}}
+    {{ui-input size='large' placeholder='placeholderIcon' placeholderIcon='ui-16px-1_calendar-60' error=(fake "lorem.sentence") readonly=true}}
+    {{ui-input size='large' placeholder='placeholderIcon' placeholderIcon='ui-16px-1_calendar-60' error=(fake "lorem.sentence") disabled=true}}
+  {{/ui-form}}
+</section>
+<div class="code">
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'placeholderIcon'</i> placeholderIcon=<i>'ICON'</i><span>}}</span>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'placeholderIcon'</i> placeholderIcon=<i>'ICON'</i> readonly=<i>true</i><span>}}</span>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'placeholderIcon'</i> placeholderIcon=<i>'ICON'</i> disabled=<i>true</i><span>}}</span>
+  <br>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'Icon'</i> icon=<i>'ICON'</i><span>}}</span>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'Icon'</i> icon=<i>'ICON'</i> readonly=<i>true</i><span>}}</span>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'Icon'</i> icon=<i>'ICON'</i> disabled=<i>true</i><span>}}</span>
+  <br>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'Icon inside'</i> icon=<i>'ICON'</i> inside=<i>'inside'</i><span>}}</span>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'Icon inside'</i> icon=<i>'ICON'</i> inside=<i>'inside'</i> readonly=<i>true</i><span>}}</span>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'Icon inside'</i> icon=<i>'ICON'</i> inside=<i>'inside'</i> disabled=<i>true</i><span>}}</span>
+  <br>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'placeholderIcon'</i> placeholderIcon=<i>'ICON'</i> error=<i>'ERROR'</i><span>}}</span>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'placeholderIcon'</i> placeholderIcon=<i>'ICON'</i> error=<i>'ERROR'</i> readonly=<i>true</i><span>}}</span>
+  <span>\{{ui-input</span> size=<i>'large'</i> placeholder=<i>'placeholderIcon'</i> placeholderIcon=<i>'ICON'</i> error=<i>'ERROR'</i> disabled=<i>true</i><span>}}</span>
+</div>

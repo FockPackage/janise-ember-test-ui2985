@@ -1,0 +1,8 @@
+.symbols {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  padding: .5rem;
+}

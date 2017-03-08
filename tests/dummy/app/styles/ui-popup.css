@@ -1,0 +1,7 @@
+.popup {
+  & :global(.ui-pane) {
+    & section {
+      text-align: center;
+    }
+  }
+}

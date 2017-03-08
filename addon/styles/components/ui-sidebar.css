@@ -1,0 +1,33 @@
+@import "../custom";
+
+/*------------------- Style -------------------*/
+
+:global(.ui-sidebar) {
+  flex-grow: 0;
+  flex-shrink: 0;
+  &[data-state="left"] {
+    float: left;
+  }
+  &[data-state="right"] {
+    float: right;
+  }
+  /*------------------- Color -------------------*/
+  &[data-theme="bright"] {
+    background-color: var(--white);
+    &[data-state="left"] {
+      border-right: 1px solid var(--botticelli);
+    }
+    &[data-state="right"] {
+      border-left: 1px solid var(--botticelli);
+    }
+  }
+  &[data-theme="dark"] {
+    background: color(var(--catalina-blue) a(60%));
+    &[data-state="left"] {
+      border-right: 1px solid var(--fiord);
+    }
+    &[data-state="right"] {
+      border-left: 1px solid var(--fiord);
+    }
+  }
+}

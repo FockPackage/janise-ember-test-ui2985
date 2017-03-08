@@ -1,0 +1,104 @@
+<section>
+  {{#ui-dropdown text='Position Center'
+                 color='blue'
+                 size='medium'
+                 horizontalPosition="center" as |config content|}}
+    {{content.item 'ui-icon' 'ui-16px-2_favourite-31' active=(eq config.label "ui-icon")}}
+    {{content.item 'ui-button' 'tech-16px-2_socket-europe-2' active=(eq config.label "ui-button")}}
+    {{content.item 'ui-input' 'design-16px-2_text' active=(eq config.label "ui-input")}}
+    {{content.item 'ui-checkbox' 'ui-16px-1_check-square-09' active=(eq config.label "ui-checkbox")}}
+    <div class="divider"></div>
+    {{#content.dropdown
+      text="sub-dropdown"
+      icon='ui-16px-3_heart'
+      horizontalPosition="auto"}}
+      {{content.item 'ui-dropdown' 'arrows-16px-3_square-down-06' active=(eq config.label "ui-dropdown")}}
+      {{content.item 'ui-navigation' 'ui-16px-e-2_dock-top'  active=(eq config.label "ui-navigation")}}
+      {{content.item 'ui-sidebar' 'ui-16px-e-2_dock-left' active=(eq config.label "ui-sidebar")}}
+      <div class="divider"></div>
+      {{#content.dropdown
+        text="sub-dropdown"
+        icon='ui-16px-3_heart'
+        horizontalPosition="auto"}}
+        {{content.item 'ui-dropdown' 'arrows-16px-3_square-down-06' active=(eq config.label "ui-dropdown")}}
+        {{content.item 'ui-navigation' 'ui-16px-e-2_dock-top'  active=(eq config.label "ui-navigation")}}
+        {{content.item 'ui-sidebar' 'ui-16px-e-2_dock-left' active=(eq config.label "ui-sidebar")}}
+      {{/content.dropdown}}
+    {{/content.dropdown}}
+  {{/ui-dropdown}}
+  <div class="preview-divider"></div>
+  {{#ui-dropdown text='Position Left'
+                 color='blue'
+                 size ='medium'
+                 horizontalPosition="left" as |config content|}}
+    {{content.item 'ui-icon' 'ui-16px-2_favourite-31' active=(eq config.label "ui-icon")}}
+    {{content.item 'ui-button' 'tech-16px-2_socket-europe-2' active=(eq config.label "ui-button")}}
+    {{content.item 'ui-input' 'design-16px-2_text' active=(eq config.label "ui-input")}}
+    {{content.item 'ui-checkbox' 'ui-16px-1_check-square-09' active=(eq config.label "ui-checkbox")}}
+    <div class="divider"></div>
+    {{#content.dropdown
+      text="sub-dropdown"
+      icon='ui-16px-3_heart'
+      horizontalPosition="auto"}}
+      {{content.item 'ui-dropdown' 'arrows-16px-3_square-down-06' active=(eq config.label "ui-dropdown")}}
+      {{content.item 'ui-navigation' 'ui-16px-e-2_dock-top'  active=(eq config.label "ui-navigation")}}
+      {{content.item 'ui-sidebar' 'ui-16px-e-2_dock-left' active=(eq config.label "ui-sidebar")}}
+      <div class="divider"></div>
+      {{#content.dropdown
+        text="sub-dropdown"
+        icon='ui-16px-3_heart'
+        horizontalPosition="auto"}}
+        {{content.item 'ui-dropdown' 'arrows-16px-3_square-down-06' active=(eq config.label "ui-dropdown")}}
+        {{content.item 'ui-navigation' 'ui-16px-e-2_dock-top'  active=(eq config.label "ui-navigation")}}
+        {{content.item 'ui-sidebar' 'ui-16px-e-2_dock-left' active=(eq config.label "ui-sidebar")}}
+      {{/content.dropdown}}
+    {{/content.dropdown}}
+  {{/ui-dropdown}}
+  <div class="preview-divider"></div>
+  {{#ui-dropdown text='Position Right'
+                 color='blue'
+                 size ='medium'
+                 horizontalPosition="right" as |config content|}}
+    {{content.item 'ui-icon' 'ui-16px-2_favourite-31' active=(eq config.label "ui-icon")}}
+    {{content.item 'ui-button' 'tech-16px-2_socket-europe-2' active=(eq config.label "ui-button")}}
+    {{content.item 'ui-input' 'design-16px-2_text' active=(eq config.label "ui-input")}}
+    {{content.item 'ui-checkbox' 'ui-16px-1_check-square-09' active=(eq config.label "ui-checkbox")}}
+    <div class="divider"></div>
+    {{#content.dropdown
+      text="sub-dropdown"
+      icon='ui-16px-3_heart'
+      horizontalPosition="auto"}}
+      {{content.item 'ui-dropdown' 'arrows-16px-3_square-down-06' active=(eq config.label "ui-dropdown")}}
+      {{content.item 'ui-navigation' 'ui-16px-e-2_dock-top'  active=(eq config.label "ui-navigation")}}
+      {{content.item 'ui-sidebar' 'ui-16px-e-2_dock-left' active=(eq config.label "ui-sidebar")}}
+      <div class="divider"></div>
+      {{#content.dropdown
+        text="sub-dropdown"
+        icon='ui-16px-3_heart'
+        horizontalPosition="auto"}}
+        {{content.item 'ui-dropdown' 'arrows-16px-3_square-down-06' active=(eq config.label "ui-dropdown")}}
+        {{content.item 'ui-navigation' 'ui-16px-e-2_dock-top'  active=(eq config.label "ui-navigation")}}
+        {{content.item 'ui-sidebar' 'ui-16px-e-2_dock-left' active=(eq config.label "ui-sidebar")}}
+      {{/content.dropdown}}
+    {{/content.dropdown}}
+  {{/ui-dropdown}}
+</section>
+<div class="code">
+  <span>\{{#ui-dropdown</span> text=<u>'LABEL'</u> color=<i>'blue'</i> size=<i>'medium'</i> horizontalPosition=<b>"center"</b> as <i>|config content|</i> <span>}}</span>
+                               &nbsp;&nbsp;<span>\{{content.item</span> <u>'LABEL'</u> <u>'ICON'</u> active=<b>(eq config.label <u>"LABEL"</u>)</b><span>}}</span>
+                               &nbsp;&nbsp;<u>......</u>
+                               &nbsp;&nbsp;<span>{{"<div"}}</span> class=<i>"divider"</i><span>{{">"}}</span><span>{{"</div>"}}</span>
+  <br>
+                               &nbsp;&nbsp;<span>\{{#content.dropdown</span> text=<u>'LABEL'</u> color=<i>'blue'</i> horizontalPosition=<b>"auto"</b><span>}}</span>
+                               &nbsp;&nbsp;&nbsp;&nbsp;<span>\{{content.item</span> text=<u>'LABEL'</u> color=<i>'blue'</i> active=<b>(eq config.label <u>"LABEL"</u>)</b><span>}}</span>
+                               &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                               &nbsp;&nbsp;&nbsp;&nbsp;<span>{{"<div"}}</span> class=<i>"divider"</i><span>{{">"}}</span><span>{{"</div>"}}</span>
+  <br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;<span>\{{#content.dropdown</span> text=<u>'LABEL'</u> color=<i>'blue'</i> horizontalPosition=<b>"auto"</b><span>}}</span>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>\{{content.item</span> text=<u>'LABEL'</u> color=<i>'blue'</i> active=<b>(eq config.label <u>"LABEL"</u>)</b><span>}}</span>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                               &nbsp;&nbsp;&nbsp;&nbsp;<span>\{{/content.dropdown}}</span>
+  <br>
+                               &nbsp;&nbsp;<span>\{{/content.dropdown}}</span>
+  <span>\{{/ui-dropdown}}</span>
+</div>

@@ -1,0 +1,15 @@
+.login {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  justify-content: center;
+  & :global(.ui-item) {
+    &:not(:last-of-type) {
+      margin-right: 1rem;
+    }
+  }
+}

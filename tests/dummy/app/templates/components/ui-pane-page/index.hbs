@@ -1,0 +1,280 @@
+<section>
+  {{#ui-pane icon='ui-16px-2_grid-square' type='logo' size='48' viewBox='48' fill='#E74D89' iconColor='#B2215A'
+             headerSize='large'
+             title=(fake "company.companyName")
+             subIcon='ui-16px-2_chat-round'
+             subTitle=(fake "internet.email")
+             close=true
+             disabled=true}}
+    <section>
+      <span>{{fake "lorem.paragraphs"}}</span>
+    </section>
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> icon=<i>'ICON'</i> type=<i>'logo'</i> size=<i>'48'</i> viewBox=<i>'48'</i> fill=<i>'#E74D89'</i>
+                             iconColor=<i>'#B2215A'</i> headerSize=<i>'large'</i> title=<i>''</i> subIcon=<i>'ICON'</i>
+                             subTitle=<i>''</i> close=<i>true</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane icon='ui-16px-2_grid-square' type='symbols' size='36' viewBox='36' color='orange'
+             headerSize='large'
+             title=(fake "company.companyName")
+  }}
+    <section class="divider">
+      <span>{{fake "lorem.paragraphs"}}</span>
+    </section>
+    <section class="divider">
+      <span>{{fake "lorem.paragraphs"}}</span>
+    </section>
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> icon=<i>'ICON'</i> type=<i>'symbols'</i> size=<i>'36'</i> viewBox=<i>'36'</i> color=<i>'orange'</i>
+                             headerSize=<i>'large'</i> title=<i>''</i> close=<i>true</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section"}}</span> {{"class="}}<i>"divider"</i><span>{{">"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane headerSize='small'
+             icon='ui-16px-e_star-empty'
+             title=(fake "company.companyName")}}
+    <section>
+      <span>{{fake "lorem.paragraphs"}}</span>
+    </section>
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> headerSize=<i>'small'</i> icon=<i>'ICON'</i> title=<i>''</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane icon='users-16px_circle-08' type='logo' size='48' viewBox='48' fill='#8DABC4' iconColor='#3F536E'
+             headerSize='large'
+             subIcon='ui-16px-2_chat-round'
+             title=(fake "lorem.sentence")
+             subTitle=(fake "internet.email")
+             draggable=true}}
+    <section>
+      <span>{{fake "lorem.paragraph"}}</span>
+    </section>
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> ... draggable=<i>true</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane title=(fake "company.companyName") collapse=true}}
+    <section>
+      <span>{{fake "lorem.paragraphs"}}</span>
+    </section>
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> ... collapse=<i>true</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane title=(fake "company.companyName") slide=true pagination=true}}
+    <section class="swiper-slide"><span>{{fake "lorem.paragraphs"}}</span></section>
+    <section class="swiper-slide"><span>{{fake "lorem.paragraphs"}}</span></section>
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> ... slide=<i>true</i> pagination=<i>true</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane headerCustom=true close=true headerSize='large' as |item|}}
+    {{#if (eq item 'header')}}
+      <div local-class="title">
+        <h2>{{fake "company.companyName"}}</h2>
+        <span>{{fake "name.firstName"}}</span>
+        <span>・</span>
+        <span>{{fake "name.lastName"}}</span>
+        {{ui-icon 'ui-16px-2_favourite-31' 12}}
+        {{ui-icon 'ui-16px-2_favourite-31' 12}}
+        {{ui-icon 'ui-16px-2_favourite-31' 12}}
+        {{ui-icon 'ui-16px-e_star-empty' 12}}
+        {{ui-icon 'ui-16px-e_star-empty' 12}}
+      </div>
+    {{else if (eq item 'content')}}
+      <section local-class="content">
+        <span>{{fake "lorem.paragraphs"}}</span>
+      </section>
+    {{/if}}
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> ... headerCustom=<i>true</i> as <i>|item|</i><span>}}</span>
+    <span>\{{#if</span> (eq item <i>'header'</i>)<span>}}</span>
+                             &nbsp;&nbsp;<u>......</u>
+    <span>\{{else</span> <span>if</span> (eq item <i>'content'</i>)<span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/if}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane type='image' size='48' viewBox='48' image='./images/sample/sample-random-0.666-4.jpeg' radius='4'
+             subIcon='ui-16px-2_time-clock'
+             title=(fake "company.companyName")
+             subTitle=(fake "phone.phoneNumberFormat")
+             headerSize='big'
+             controlCustom=true as |item|}}
+    {{#if (eq item 'control')}}
+      {{ui-button 'Custom' color='stroked' size='medium'}}
+      {{ui-button color='stroked' icon='ui-16px-1_pencil' size='medium'}}
+    {{else if (eq item 'content')}}
+      <section>
+        <span>{{fake "lorem.paragraphs"}}</span>
+      </section>
+    {{/if}}
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> type=<u>'image'</u> size=<u>'48'</u> viewBox=<u>'48'</u> image=<u>'IMAGE'</u>
+                             radius=<u>'4'</u> ... controlCustom=<i>true</i> as <i>|item|</i><span>}}</span>
+    <span>\{{#if</span> (eq item <i>'control'</i>)<span>}}</span>
+                             &nbsp;&nbsp;<u>......</u>
+    <span>\{{else</span> <span>if</span> (eq item <i>'content'</i>)<span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/if}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane headerCustom=true controlCustom=true as |item|}}
+    {{#if (eq item 'header')}}
+      {{ui-button 'Tag' color='border-purple' size='tag'}}
+    {{/if}}
+    {{#if (eq item 'control')}}
+      {{ui-button 'Medium' color='blue' size='small' icon='ui-16px-2_chat-round' extend=true}}
+    {{else if (eq item 'content')}}
+      <section>
+        <span>{{fake "lorem.paragraphs"}}</span>
+      </section>
+    {{/if}}
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> ... headerCustom=<i>true</i> controlCustom=<i>true</i> as <i>|item|</i><span>}}</span>
+    <span>\{{#if</span> (eq item <i>'header'</i>)<span>}}</span>
+                             &nbsp;&nbsp;<u>......</u>
+    <span>\{{/if}}</span>
+    <span>\{{#if</span> (eq item <i>'control'</i>)<span>}}</span>
+                             &nbsp;&nbsp;<u>......</u>
+    <span>\{{else</span> <span>if</span> (eq item <i>'content'</i>)<span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/if}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane type='logo' size='48' viewBox='48' fill='#0079C4' iconColor='#FFF'
+             headerSize='large'
+             paneColor='blue'
+             icon='ui-16px-e_star-empty'
+             title=(fake "company.companyName")
+             subIcon='ui-16px-2_chat-round'
+             subTitle=(fake "internet.email")
+             close=true
+  }}
+    <section>
+      <span>{{fake "lorem.paragraphs"}}</span>
+    </section>
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> type=<i>'logo'</i> size=<i>'48'</i> viewBox=<i>'48'</i> fill=<i>'#0079C4'</i> iconColor=<i>'#FFF'</i>
+                             headerSize=<i>'large'</i> paneColor=<i>'blue'</i> icon=<i>'ICON'</i> title=<i>''</i>
+                             subIcon=<i>'ICON'</i> subTitle=<i>''</i> close=<i>true</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-pane type='logo' size='48' viewBox='48' fill='#B2215A' iconColor='#FFF'
+             headerSize='large'
+             paneCustomColor='#E74D89'
+             icon='ui-16px-e_star-empty'
+             title=(fake "company.companyName")
+             subIcon='ui-16px-2_chat-round'
+             subTitle=(fake "internet.email")
+             close=true
+  }}
+    <section>
+      <span>{{fake "lorem.paragraphs"}}</span>
+    </section>
+  {{/ui-pane}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> type=<i>'logo'</i> size=<i>'48'</i> viewBox=<i>'48'</i> fill=<i>'#B2215A'</i> iconColor=<i>'#FFF'</i>
+                             headerSize=<i>'large'</i> paneCustomColor=<i>'#E74D89'</i> icon=<i>'ICON'</i>
+                             title=<i>''</i> subIcon=<i>'ICON'</i> subTitle=<i>''</i> close=<i>true</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>
+<section>
+  {{#ui-grid}}
+    <div class='column eight'>
+      {{#ui-pane icon='ui-16px-e_star-empty'
+                 title=(fake "company.companyName")
+                 headerImage='./images/sample/sample-random-0.666-16.jpeg'
+                 headerImageThumbnail='./images/sample/sample-random-0.666-16-thumbnail.jpeg'
+                 ratio='0.666'
+                 close=true}}
+        <section>
+          <h2>{{fake "company.companyName"}}</h2>
+          <span>{{fake "lorem.paragraphs"}}</span>
+        </section>
+      {{/ui-pane}}
+    </div>
+    <div class='column eight'>
+      {{#ui-pane icon='ui-16px-e_star-empty'
+                 title=(fake "company.companyName")
+                 headerImage='./images/sample/sample-random-0.666-16.jpeg'
+                 headerImageThumbnail='./images/sample/sample-random-0.666-16-thumbnail.jpeg'
+                 ratio='0.666'
+                 close=true}}
+        <section>
+          <h2>{{fake "company.companyName"}}</h2>
+          <span>{{fake "lorem.paragraphs"}}</span>
+        </section>
+      {{/ui-pane}}
+    </div>
+  {{/ui-grid}}
+  <div class="code inSection">
+    <span>\{{#ui-pane</span> icon=<i>'ICON'</i> title=<i>''</i> headerImage=<i>''</i> headerImageThumbnail=<i>''</i>
+                             ratio=<i>''</i> close=<i>true</i><span>}}</span>
+                             &nbsp;&nbsp;<span>{{"<section>"}}</span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                             &nbsp;&nbsp;<span>{{"</section>"}}</span>
+    <span>\{{/ui-pane}}</span>
+  </div>
+</section>

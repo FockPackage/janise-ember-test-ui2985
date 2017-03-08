@@ -1,0 +1,32 @@
+{{#ui-navigation local-class="nav"
+                 logoWidth='240px'
+                 svgWidth='388'
+                 svgHeight='36'
+                 slideId='0'
+                 sidebar="desktop tablet" as |index|}}
+
+  {{#link-to 'index' local-class='logo'}}
+    {{index-page/logo tagName=''}}
+  {{/link-to}}
+  <span>Ember ui components addon</span>
+  <div local-class="control">
+    <p>Theme: {{theme.name}}</p>
+    {{ui-button
+      'Switch'
+      color='blue'
+      icon='ui-16px-2_fullsize'
+      size='small'
+      onClick=(action theme.switchTheme theme)
+    }}
+  </div>
+{{/ui-navigation}}
+
+<div class="preview-main" data-theme={{theme.name}}>
+  {{index-page/sidebar tagName=''}}
+  <div local-class="contents">
+    {{outlet}}
+  </div>
+</div>
+
+{{svg-icon}}
+{{index-page/icon}}

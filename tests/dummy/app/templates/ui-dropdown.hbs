@@ -1,0 +1,11 @@
+<section class="preview-container" local-class="dropdown">
+  {{#ui-pane class='ui-pane-preview'}}
+    {{#ui-sidebar width='120px' position='left'}}
+      {{ui-item 'Position' divider=true route='ui-dropdown.index'}}
+      {{ui-item 'Input' divider=true route='ui-dropdown.input'}}
+      {{ui-item 'Control' divider=true route='ui-dropdown.control'}}
+      {{ui-item 'Contents' divider=true route='ui-dropdown.contents'}}
+    {{/ui-sidebar}}
+    {{outlet}}
+  {{/ui-pane}}
+</section>

@@ -1,0 +1,12 @@
+<div class="ui-modal-background" style={{style}} onclick={{action "decline"}}></div>
+<div class="ui-modal-content" local-class="{{size}}">
+  <h1>Confirm!</h1>
+  {{#if templateName}}
+    <div>{{partial templateName}}</div>
+  {{else}}
+    {{component "dialog-body" layout=template contextObject=contextObject context=context}}
+  {{/if}}
+
+  {{ui-button 'cancel' size='medium' color='stroked' onClick=(action "decline")}}
+  {{ui-button 'ok' size='medium' customBackground='#FD7B1F' onClick=(action "accept")}}
+</div>

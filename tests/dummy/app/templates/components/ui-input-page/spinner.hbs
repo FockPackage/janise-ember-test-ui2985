@@ -1,0 +1,20 @@
+<section>
+  {{#ui-form 'vertical' 'three'}}
+    {{ui-input placeholder='Spinner' spinner=true}}
+    {{ui-input placeholder='Spinner' spinner=true units='PX'}}
+    {{ui-input placeholder='Spinner' spinner=true units='%'}}
+    {{ui-input placeholder='Spinner' icon='ui-16px-1_calendar-60' spinner=true}}
+    {{ui-input 'Spinner' placeholder='Spinner' spinner=true}}
+    {{ui-input placeholder='Spinner' spinner=true error=(fake "lorem.sentence")}}
+    {{ui-input placeholder='Spinner' spinner=true disabled=true}}
+  {{/ui-form}}
+</section>
+<div class="code">
+  <h3>INCOMPATIBLE \{{placeholderIcon}}</h3>
+  <span>\{{ui-input</span> placeholder=<i>'Spinner'</i> spinner=<i>true</i><span>}}</span>
+  <span>\{{ui-input</span> placeholder=<i>'Spinner'</i> spinner=<i>true</i> units=<i>'PX'</i><span>}}</span>
+  <span>\{{ui-input</span> placeholder=<i>'Spinner'</i> spinner=<i>true</i> units=<i>'%'</i><span>}}</span>
+  <span>\{{ui-input</span> placeholder=<i>'Spinner'</i> icon=<i>'ICON'</i><span>}}</span>
+  <span>\{{ui-input</span> <i>'Spinner'</i> placeholder=<i>'Spinner'</i> error=<i>'ERROR'</i><span>}}</span>
+  <span>\{{ui-input</span> <i>'Spinner'</i> placeholder=<i>'Spinner'</i> error=<i>'ERROR'</i> disabled=<i>true</i><span>}}</span>
+</div>

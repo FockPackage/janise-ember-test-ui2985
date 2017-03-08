@@ -1,0 +1,11 @@
+@import "./custom";
+
+:global(body.ember-application) {
+  & > :global(.ember-view) {
+    min-height: 100vh;
+  }
+}
+
+.container {
+
+}

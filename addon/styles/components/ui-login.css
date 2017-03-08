@@ -1,0 +1,167 @@
+@import "../custom";
+
+/*------------------- Style -------------------*/
+:global(.ui-login) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & :global(.login-logo) {
+    margin-bottom: var(--offset);
+    & svg {
+      width: calc(var(--offset) * 6);
+    }
+  }
+  & .profile {
+    color: var(--white);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: calc(var(--offset) * -1.5);
+    box-shadow: 0 0 4px 0 color(var(--black) a(50%));
+    z-index: calc(var(--ui-popup) + 1);
+    &:before {
+      content: '';
+      position: absolute 0 0 0 0;
+      transition: background 200ms ease;
+    }
+    &:active {
+      &:before {
+        background-color: color(var(--black) a(50%));
+      }
+      & :global(.ui-icon) {
+        opacity: 1;
+      }
+    }
+    & :global(.ui-icon) {
+      position: absolute 0 0 0 0;
+      margin: auto;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+    & :global(.ui-profile) {
+      background-color: var(--zumthor);
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij48cGF0aCBmaWxsPSIjQzVEOUU4IiBkPSJNMjQgMjVjMy4zIDAgNi0yLjcgNi02di0xYzAtMy4zLTIuNy02LTYtNnMtNiAyLjctNiA2djFjMCAzLjMgMi43IDYgNiA2ek0zMS4zIDI4Yy00LjctMS4zLTkuOS0xLjMtMTQuNiAwLTIuMi42LTMuNyAyLjYtMy43IDQuOHYzLjJoMjJ2LTMuMmMwLTIuMi0xLjUtNC4yLTMuNy00Ljh6Ii8+PC9zdmc+);
+    }
+  }
+  & :global(.login-form-container) {
+    & :global(.pane-contents) {
+      & :global(.regular-forms) {
+        display: flex;
+        flex-direction: column;
+        padding: calc(var(--offset) * 1.5);
+        &[data-state="oauth"] {
+
+        }
+        &[data-state="profile"] {
+          padding-top: calc(var(--offset) * 2)
+        }
+        &[data-addition] {
+          padding-bottom: 0;
+        }
+        & :global(.login-form-header) {
+          text-align: center;
+          margin-bottom: var(--offset);
+          & > span {
+            color: var(--nepal);
+            display: block;
+          }
+        }
+        & form {
+          margin-bottom: calc(var(--offset) / 4);
+        }
+      }
+      & .addition {
+        text-align: center;
+        padding: var(--offset) calc(var(--offset) / 2);
+        & > span {
+          color: var(--nepal);
+          font-size: calc(var(--font-size) * .8);
+        }
+      }
+      & .connect-with {
+        color: var(--nepal);
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: calc(var(--offset) * 1.5);
+        & :global(.ui-button) {
+          flex-grow: 1;
+          border-radius: 0;
+          height: auto;
+          &:active {
+            color: var(--cool-blue);
+          }
+        }
+      }
+    }
+    &[data-theme="bright"] {
+      & :global(.pane-contents) {
+        & .connect-with {
+          border-top: 1px solid color(var(--botticelli) a(50%));
+          & :global(.ui-button) {
+            &:not(:last-of-type) {
+              border-right: 1px solid color(var(--botticelli) a(50%));
+            }
+          }
+        }
+      }
+    }
+    &[data-theme="dark"] {
+      & :global(.pane-contents) {
+        & .connect-with {
+          border-top: 1px solid color(var(--white) a(10%));
+          & :global(.ui-button) {
+            &:not(:last-of-type) {
+              border-right: 1px solid color(var(--white) a(10%));
+            }
+          }
+        }
+      }
+    }
+  }
+  & .footer {
+    text-align: center;
+    margin-top: var(--offset);
+    & > div {
+      display: block;
+      color: var(--nepal);
+      font-size: calc(var(--font-size) * .8);
+      &:not(:last-of-type) {
+        margin-bottom: calc(var(--offset) / 8);
+      }
+      & + .privacy {
+        margin-top: calc(var(--offset) / 2);
+      }
+    }
+  }
+}
+
+/*------------------- responsive -------------------*/
+
+:global(html.desktop) {
+  & :global(.ui-login) {
+    & .profile {
+      &:hover {
+        &:before {
+          background-color: color(var(--black) a(50%));
+        }
+        & :global(.ui-icon) {
+          opacity: 1;
+        }
+      }
+    }
+    & :global(.login-form-container) {
+      & :global(.pane-contents) {
+        & .connect-with {
+          & :global(.ui-button) {
+            &:hover {
+              color: var(--cool-blue);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

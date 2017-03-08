@@ -1,0 +1,92 @@
+{{#ui-pane class='ui-pane-preview' local-class='navigation-preview-wrapper'}}
+  {{#ui-navigation logo="logo desktop ipad"
+                   logoWidth='200px'
+                   svgWidth='388'
+                   svgHeight='36'
+                   local-class='nav-1'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+  {{/ui-navigation}}
+  <div class="code" local-class='code'>
+    <span>\{{#ui-navigation</span> logo=<u>'LOGO <b>desktop</b> <b>ipad</b>'</u> logoWidth=<i>'128px'</i> svgWidth=<i>'16'</i> svgHeight=<i>'16'</i><span>}}</span>
+    &nbsp;&nbsp;<u>......</u>
+    <span>\{{/ui-navigation}}</span>
+  </div>
+{{/ui-pane}}
+
+{{#ui-pane class='ui-pane-preview' local-class='navigation-preview-wrapper'}}
+  {{#ui-navigation class='theme dark'
+                   sidebar="desktop tablet"
+                   logo="logo desktop"
+                   logoWidth='240px'
+                   svgWidth='388'
+                   svgHeight='36'
+                   slideId='1'
+                   local-class='nav-2'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+  {{/ui-navigation}}
+  {{#if  (device 'desktop')}}
+    {{#ui-sidebar position='left' width='240px' local-class='sidebar-left' slideId='1' toggleShow=true slide-enable=true}}
+      {{#ui-sections}}
+        {{ui-item (fake "company.companyName") 'ui-16px-1_zoom'}}
+        {{ui-item (fake "company.companyName") 'ui-16px-2_chat-round-content'}}
+        {{ui-item (fake "company.companyName") 'ui-16px-e_star-empty'}}
+        {{ui-item (fake "company.companyName") 'ui-16px-1_pencil'}}
+        {{ui-item (fake "company.companyName") 'shopping-16px_tag-content'}}
+      {{/ui-sections}}
+    {{/ui-sidebar}}
+  {{/if}}
+
+  <article class="code">
+    <span>\{{#ui-navigation</span> logo=<u>'LOGO <b>desktop</b>'</u> logoWidth=<i>'128px'</i> svgWidth=<i>'16'</i> svgHeight=<i>'16'</i> sidebar=<b>'desktop tablet'</b><span>}}</span>
+                                   &nbsp;&nbsp;<u>......</u>
+    <span>\{{/ui-navigation}}</span>
+    <span>\{{#if  <u>(device <b>'desktop'</b>)</u>}}</span>
+                                   &nbsp;&nbsp;<span>\{{#ui-sidebar</span> position=<i>'left'</i> width=<u>'240px'</u> toggleShow=<b>true</b> slide-enable=<b>true</b><span>}}</span>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                                   &nbsp;&nbsp;<span>\{{/ui-sidebar}}</span>
+   <span>\{{/if}}</span>
+  </article>
+{{/ui-pane}}
+
+{{#ui-pane class='ui-pane-preview' local-class='navigation-preview-wrapper right'}}
+  {{#ui-navigation class='theme dark'
+                   sidebarRight="desktop mobile"
+                   logo="logo desktop mobile"
+                   logoWidth='200px'
+                   svgWidth='388'
+                   svgHeight='36'
+                   slideId='2'
+                   local-class='nav-3'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+    {{ui-item 'Link'}}
+  {{/ui-navigation}}
+  {{#unless (device 'tablet')}}
+    {{#ui-sidebar position='right' width='240px' local-class='sidebar-right'  slideId='2' toggleShow=true}}
+      {{#ui-sections}}
+        {{ui-item (fake "company.companyName") 'ui-16px-1_zoom' 36 36 type='symbols' color='blue'}}
+        {{ui-item (fake "company.companyName") 'ui-16px-2_chat-round-content' 36 36 type='symbols' color='lime'}}
+        {{ui-item (fake "company.companyName") 'ui-16px-e_star-empty' 36 36 type='symbols' color='purple'}}
+        {{ui-item (fake "company.companyName") 'ui-16px-1_pencil' 36 36 type='symbols' color='yellow'}}
+        {{ui-item (fake "company.companyName") 'shopping-16px_tag-content' 36 36 type='symbols' color='orange'}}
+      {{/ui-sections}}
+    {{/ui-sidebar}}
+  {{/unless}}
+  <article class="code">
+    <span>\{{#ui-navigation</span> logo=<u>'LOGO'</u> logoWidth=<i>'128px'</i> svgWidth=<i>'16'</i> svgHeight=<i>'16'</i> sidebarRight=<b>'desktop mobile'</b><span>}}</span>
+                                   &nbsp;&nbsp;<u>......</u>
+    <span>\{{/ui-navigation}}</span>
+    <span>\{{#unless <u>(device <b>'tablet'</b>)</u>}}</span>
+                                   &nbsp;&nbsp;<span>\{{#ui-sidebar</span> position=<i>'right'</i> width=<u>'240px'</u> toggleShow=<b>true</b><span>}}</span>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;<u>......</u>
+                                   &nbsp;&nbsp;<span>\{{/ui-sidebar}}</span>
+    <span>\{{/unless}}</span>
+  </article>
+{{/ui-pane}}

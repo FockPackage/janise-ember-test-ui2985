@@ -1,0 +1,98 @@
+{{#if profile}}
+  <div local-class='profile'>
+    {{ui-icon 'media-16px-1_camera-19'}}
+    {{ui-icon 96 96 type='image' image=profile}}
+  </div>
+{{/if}}
+{{#ui-pane class='login-form-container' data-theme=theme.name}}
+  <div class='regular-forms' data-state={{regular}} data-addition={{addition}}>
+    <!-------------- Custom Header -------------->
+    {{#if hasBlock}}
+      <div class='login-form-header'>
+        {{yield}}
+      </div>
+    {{/if}}
+    <!-------------- Form -------------->
+    {{#if (or email name password confirm)}}
+      {{#ui-form}}
+        {{#if email}}
+          {{ui-input
+            placeholder='Email'
+            value=formValue.email
+            error=error.email
+            onEnter=onEnter
+          }}
+        {{/if}}
+
+        {{#if name}}
+          {{ui-input
+            placeholder='Full name'
+            value=formValue.name
+          }}
+        {{/if}}
+
+        {{#if password}}
+          {{ui-input
+            type='password'
+            placeholder='Password'
+            value=formValue.password
+            error=error.password
+            onEnter=onEnter
+          }}
+        {{/if}}
+
+        {{#if confirm}}
+          {{ui-input
+            type='password'
+            placeholder='Confirm Password'
+            value=formValue.confirmPassword
+          }}
+        {{/if}}
+      {{/ui-form}}
+    {{/if}}
+
+    {{ui-button
+      submit
+      size='large'
+      color=submitColor
+      loading=isLoading
+      onClick=submitAcion
+    }}
+  </div>
+  <!-------------- Addition -------------->
+  {{#if (or addonLabel addonLinke)}}
+    <div local-class='addition'>
+      {{#if addonLabel}}
+        <span>{{addonLabel}}</span>
+      {{/if}}
+      {{#if addonLinke}}
+        {{ui-button addonLinke size='text' color=linkColor customColor=linkCustomColor}}
+      {{/if}}
+    </div>
+  {{/if}}
+  <!-------------- OAuth -------------->
+  {{#if oauth}}
+    <div local-class='connect-with'>
+      {{#each oauth as |item|}}
+        {{ui-button item.label icon=item.icon}}
+      {{/each}}
+    </div>
+  {{/if}}
+{{/ui-pane}}
+<!-------------- Footer -------------->
+{{#if (or footer privacy)}}
+  <div local-class='footer'>
+    {{#each footer as |item|}}
+      <div>{{item.footerLabel}}{{ui-button item.footerLinke size='text' color=linkColor customColor=footerCustomColor}}</div>
+    {{/each}}
+    <!-------------- Privacy -------------->
+    {{#if privacy}}
+      <div local-class='privacy'>
+        Signing up for a choiceform account means you agree to the
+        {{ui-button 'Privacy Policy' size='text' color=linkColor customColor=linkCustomColor}}
+        and{{ui-button 'Terms of Service' size='text' color=linkColor customColor=linkCustomColor}}
+        .
+      </div>
+    {{/if}}
+  </div>
+{{/if}}

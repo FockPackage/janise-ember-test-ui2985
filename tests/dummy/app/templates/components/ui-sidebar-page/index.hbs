@@ -1,0 +1,72 @@
+<section>
+  {{#ui-sidebar position='left' width='360px'}}
+    {{#ui-sections (fake "company.companyName") control='Settings'
+                   icon='ui-16px-1_settings-gear-63'
+                   customColor='#0093EE'
+                   header='UI Sidebar'
+                   headerIcon='ui-16px-e_round-e-help'}}
+      {{#ui-form}}
+        {{ui-input placeholder=(fake "company.companyName")}}
+        {{ui-input placeholder=(fake "company.companyName")}}
+      {{/ui-form}}
+    {{/ui-sections}}
+
+    {{#ui-sections (fake "company.companyName") control='Settings' customColor='#0093EE'}}
+      {{#ui-form}}
+        {{ui-input placeholder=(fake "company.companyName")}}
+        {{ui-input placeholder=(fake "company.companyName")}}
+      {{/ui-form}}
+    {{/ui-sections}}
+
+    {{#ui-sections (fake "company.companyName") icon='ui-16px-1_pencil' customColor='#0093EE'}}
+      {{#ui-form}}
+        {{ui-input placeholder=(fake "company.companyName")}}
+        {{ui-input placeholder=(fake "company.companyName")}}
+      {{/ui-form}}
+    {{/ui-sections}}
+
+    {{#ui-sections (fake "company.companyName") collapse=true}}
+      {{ui-checkbox (fake "company.companyName") name='sample1'}}
+      {{ui-checkbox (fake "company.companyName") name='sample2'}}
+    {{/ui-sections}}
+
+    {{#ui-sections (fake "company.companyName")}}
+      {{#ui-dropdown text=(fake "company.companyName")
+                     color='stroked'
+                     size ='medium'
+                     icon='ui-16px-3_heart'
+                     horizontalPosition="left" as | config |}}
+        <div class="option-contents">
+          {{ui-item (fake "company.companyName")}}
+          {{ui-item (fake "company.companyName")}}
+          {{ui-item (fake "company.companyName")}}
+        </div>
+      {{/ui-dropdown}}
+    {{/ui-sections}}
+
+    {{#ui-sections title=(fake "company.companyName") titleIcon='ui-16px-1_simple-add' customColor='#0093EE'}}
+      {{ui-checkbox (fake "company.companyName") name='sample1'}}
+      {{ui-checkbox (fake "company.companyName") name='sample2'}}
+    {{/ui-sections}}
+  {{/ui-sidebar}}
+
+  {{#ui-sidebar position='right' width='240px'}}
+    {{#ui-sections (fake "company.companyName") collapse=true header='UI Sidebar' headerIcon='ui-16px-e_round-e-help'}}
+      {{ui-item (fake "company.companyName") 'ui-16px-1_zoom'}}
+      {{ui-item (fake "company.companyName") 'ui-16px-2_chat-round-content'}}
+      {{ui-item (fake "company.companyName") 'ui-16px-e_star-empty'}}
+      {{ui-item (fake "company.companyName") 'ui-16px-1_pencil'}}
+      {{ui-item (fake "company.companyName") 'shopping-16px_tag-content'}}
+    {{/ui-sections}}
+    {{#ui-sections (fake "company.companyName") collapse=true}}
+      {{ui-item (fake "company.companyName") 'ui-16px-1_zoom' 36 36 type='symbols' color='blue'}}
+      {{ui-item (fake "company.companyName") 'ui-16px-2_chat-round-content' 36 36 type='symbols' color='lime'}}
+      {{ui-item (fake "company.companyName") 'ui-16px-e_star-empty' 36 36 type='symbols' color='purple'}}
+      {{ui-item (fake "company.companyName") 'ui-16px-1_pencil' 36 36 type='symbols' color='yellow'}}
+      {{ui-item (fake "company.companyName") 'shopping-16px_tag-content' 36 36 type='symbols' color='orange'}}
+    {{/ui-sections}}
+  {{/ui-sidebar}}
+</section>
+<div class="code">
+
+</div>

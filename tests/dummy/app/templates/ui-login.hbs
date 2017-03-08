@@ -1,0 +1,9 @@
+<section class="preview-container" local-class="login">
+  {{#ui-navigation local-class='nav' as |index|}}
+    {{ui-item 'Login' route='ui-login.index' activeColor='blue' currentRouteName=subIndex}}
+    {{ui-item 'Singup' route='ui-login.singup' activeColor='blue' currentRouteName=subIndex}}
+    {{ui-item 'Forgot Password' route='ui-login.forgot' activeColor='blue' currentRouteName=subIndex}}
+    {{ui-item 'Reset Password' route='ui-login.reset' activeColor='blue' currentRouteName=subIndex}}
+  {{/ui-navigation}}
+  {{outlet}}
+</section>

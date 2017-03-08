@@ -1,0 +1,62 @@
+<div class="preview-container ui-input theme bright">
+  <h1>UI Input</h1>
+  <div class="preview-column">
+    <h3>sortable</h3>
+    {{#ui-section-sortable sortable = 'section1' put='section2,section3,section4' }}
+        <div class="item simple-dark">A-01<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+        <div class="item simple-dark">A-02<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+        <div class="item simple-dark">A-03<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+        <div class="item simple-dark">A-04<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+        <div class="item simple-dark">A-05<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+        <div class="item simple-dark">A-06<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+        {{#ui-pane icon='users-16px_circle-08' type='logo' size='48' viewBox='48' fill='#8DABC4' iconColor='#3F536E'
+                   headerSize='large'
+                   subIcon='ui-16px-2_chat-round'
+                   title=(fake "lorem.sentence")
+                   subTitle=(fake "internet.email")
+                   draggable=true}}
+          <section>
+            <span>{{fake "lorem.paragraph"}}</span>
+          </section>
+          <section>
+            <img src={{fake "image.image" 48 48}}>
+            <img src={{fake "image.image" 48 48}}>
+            <img src={{fake "image.image" 48 48}}>
+            <img src={{fake "image.image" 48 48}}>
+            <img src={{fake "image.image" 48 48}}>
+          </section>
+        {{/ui-pane}}
+        <div class="item simple-dark">A-07<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+    {{/ui-section-sortable}}
+
+    {{#ui-section-sortable sortable = 'section2' put='section1,section3,section4'}}
+      <div class="item simple-dark">B-01<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">B-02<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">B-03<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">B-04<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">B-05<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">B-06<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">B-07<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+    {{/ui-section-sortable}}
+
+    {{#ui-section-sortable sortable = 'section3' put='section1,section4'}}
+      <div class="item simple-dark">C-01<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">C-02<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">C-03<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">C-04<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">C-05<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">C-06<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">C-07<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+    {{/ui-section-sortable}}
+
+    {{#ui-section-sortable sortable = 'section4' }}
+      <div class="item simple-dark">D-01<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">D-02<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">D-03<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">D-04<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">D-05<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">D-06<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+      <div class="item simple-dark">D-07<span data-handle='handle'  local-class="handle" class="handle"></span></div>
+    {{/ui-section-sortable}}
+  </div>
+</div>

@@ -1,0 +1,266 @@
+@import "../custom";
+
+:global(.ember-basic-dropdown-content) {
+  background: none;
+  & :global(.option-contents) {
+    font-size: calc(var(--font-size) * .9);
+    border-radius: var(--border-radius-m);
+    &:after,
+    &:before {
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    &:after {
+      border-width: calc(.5rem - 2px);
+      margin-left: calc(-.5rem + 2px);
+    }
+    &:before {
+      border-width: .5rem;
+      margin-left: -.5rem;
+    }
+    /*------------------- Color -------------------*/
+    &[data-theme="bright"] {
+      color: var(--fiord);
+      background-color: var(--white);
+      box-shadow: inset 0 0 0 1px color(var(--light-steel-blue) a(80%)), inset 0 -1px 0 0 color(var(--fiord) a(50%)), 0 1px 5px 0 color(var(--catalina-blue) a(30%));
+      &:after {
+        border-color: color(var(--white) a(0));
+      }
+      &:before {
+        border-color: rgba(188, 208, 231, 0);
+      }
+      & :global(.optgroup) {
+        border-bottom: 1px solid color(var(--light-steel-blue) a(50%));
+      }
+      & :global(.divider) {
+        &:before {
+          background-color: color(var(--light-steel-blue) a(50%));
+        }
+      }
+    }
+    &[data-theme="dark"] {
+      color: var(--zumthor);
+      background-color: var(--catalina-blue);
+      box-shadow: inset 0 0 0 1px color(var(--white) a(10%)), inset 0 -1px 0 0 color(var(--white) a(10%)), 0 1px 5px 0 color(var(--black) a(30%));
+      &:after {
+        border-color: color(var(--catalina-blue) a(0));
+      }
+      &:before {
+        border-color: rgba(69, 83, 107, 0);
+      }
+      & :global(.optgroup) {
+        border-bottom: 1px solid var(--midnight);
+      }
+      & :global(.divider) {
+        &:before {
+          background-color: var(--midnight);
+        }
+      }
+    }
+  }
+}
+
+:global(.ember-basic-dropdown-content--below) {
+  & > :global(.option-contents) {
+    margin-top: calc(var(--offset) / 2);
+    &:after,
+    &:before {
+      bottom: calc(100% - 1px);
+    }
+    /*------------------- Color -------------------*/
+    &[data-theme="bright"] {
+      &:after {
+        border-bottom-color: var(--white);
+      }
+      &:before {
+        border-bottom-color: #BCD0E7;
+      }
+    }
+    &[data-theme="dark"] {
+      &:after {
+        border-bottom-color: var(--catalina-blue);
+      }
+      &:before {
+        border-bottom-color: #45536B;
+      }
+    }
+  }
+  & .sub-content {
+    top: calc(var(--offset) / -4);
+    & > :global(.option-contents) {
+      &:before {
+        top: 1.25rem;
+      }
+      &:after {
+        top: calc(1.25rem + 2px);
+      }
+    }
+  }
+}
+
+:global(.ember-basic-dropdown-content--above) {
+  & > :global(.option-contents) {
+    margin-top: calc(var(--offset) / -2);
+    &:after,
+    &:before {
+      top: calc(100% - 1px);
+    }
+    /*------------------- Color -------------------*/
+    &[data-theme="bright"] {
+      &:after {
+        border-top-color: var(--white);
+      }
+      &:before {
+        border-top-color: #BCD0E7;
+      }
+    }
+    &[data-theme="dark"] {
+      &:after {
+        border-top-color: var(--catalina-blue);
+      }
+      &:before {
+        border-top-color: #45536B;
+      }
+    }
+  }
+  & .sub-content {
+    bottom: calc(var(--offset) / -4);
+    & > :global(.option-contents) {
+      &:before {
+        bottom: 1.25rem;
+      }
+      &:after {
+        bottom: calc(1.25rem + 2px);
+      }
+    }
+  }
+}
+
+/*------------------- Style -------------------*/
+
+:global(.ember-basic-dropdown-trigger) {
+  outline: none;
+}
+
+:global(.ember-basic-dropdown-content--left) {
+  & > :global(.option-contents) {
+    &:after,
+    &:before {
+      left: 20%;
+    }
+  }
+  &.sub-content {
+    left: calc(100% + calc(var(--offset) / 8));
+    & > :global(.option-contents) {
+      margin-left: calc(var(--offset) / 2);
+      &:after,
+      &:before {
+        left: auto;
+        margin-left: 0;
+        right: calc(100% - 1px);
+      }
+      /*------------------- Color -------------------*/
+      &[data-theme="bright"] {
+        &:after {
+          border-right-color: var(--white);
+        }
+        &:before {
+          border-right-color: #BCD0E7;
+        }
+      }
+      &[data-theme="dark"] {
+        &:after {
+          border-right-color: var(--catalina-blue);
+        }
+        &:before {
+          border-right-color: #45536B;
+        }
+      }
+    }
+  }
+}
+
+:global(.ember-basic-dropdown-content--right) {
+  & > :global(.option-contents) {
+    &:after,
+    &:before {
+      left: 80%;
+    }
+  }
+  &.sub-content {
+    right: calc(100% + calc(var(--offset) / 8));
+    & > :global(.option-contents) {
+      margin-right: calc(var(--offset) / 2);
+      &:after,
+      &:before {
+        margin-left: 0;
+        left: calc(100% - 1px);
+      }
+      /*------------------- Color -------------------*/
+      &[data-theme="bright"] {
+        &:after {
+          border-left-color: var(--white);
+        }
+        &:before {
+          border-left-color: #BCD0E7;
+        }
+      }
+      &[data-theme="dark"] {
+        &:after {
+          border-left-color: var(--catalina-blue);
+        }
+        &:before {
+          border-left-color: #45536B;
+        }
+      }
+    }
+  }
+}
+
+:global(.ember-basic-dropdown-content--center) {
+  & > :global(.option-contents) {
+    &:after,
+    &:before {
+      left: 50%;
+    }
+  }
+}
+
+:global(.option-contents) {
+  position: relative;
+  padding: calc(var(--offset) / 4);
+  & :global(.divider) {
+    height: calc(var(--offset) / 2);
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(50% - 1px);
+      content: '';
+      height: 1px;
+    }
+  }
+  & :global(.ui-item) {
+    & p {
+      white-space: nowrap;
+    }
+  }
+  & :global(.dropdown-control-button) {
+    border-radius: 0 0 var(--border-radius-m) var(--border-radius-m);
+    margin: calc(var(--offset) / 4) calc(var(--offset) / -4) calc(var(--offset) / -4);
+  }
+}
+
+:global(.optgroup) {
+  padding: calc(var(--offset) / 4) calc(var(--offset) / 2);
+}
+
+:global(.ui-dropdown) {
+  display: inline-block;
+  vertical-align: middle;
+}

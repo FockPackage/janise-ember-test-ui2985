@@ -1,0 +1,14 @@
+<section class="preview-container" local-class="item">
+  {{#ui-pane class='ui-pane-preview'}}
+    {{#ui-sidebar width='120px' position='left'}}
+      {{ui-item 'Basic' divider=true route='ui-item.index'}}
+      {{ui-item '+ Icon' divider=true route='ui-item.icon'}}
+      {{ui-item '+ Profile' divider=true route='ui-item.profile'}}
+      {{ui-item 'Custom' divider=true route='ui-item.custom'}}
+      {{ui-item 'Badges' divider=true route='ui-item.badges'}}
+      {{ui-item 'Hint' divider=true route='ui-item.hint'}}
+      {{ui-item 'Attachments' divider=true route='ui-item.attachments'}}
+    {{/ui-sidebar}}
+    {{outlet}}
+  {{/ui-pane}}
+</section>

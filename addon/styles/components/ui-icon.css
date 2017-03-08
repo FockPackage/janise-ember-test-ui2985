@@ -1,0 +1,79 @@
+@import "../custom";
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  backface-visibility: hidden;
+}
+
+.symbols {
+  & use {
+    fill: var(--white);
+    transform: translate(10px, 10px);
+  }
+  &.blue {
+    & rect {
+      fill: var(--java);
+    }
+  }
+  &.lime {
+    & rect {
+      fill: var(--lime);
+    }
+  }
+  &.purple {
+    & rect {
+      fill: var(--soft-purple);
+    }
+  }
+  &.yellow {
+    & rect {
+      fill: var(--supernova);
+    }
+  }
+  &.orange {
+    & rect {
+      fill: var(--pumpkin);
+    }
+  }
+  &.dark {
+    & rect {
+      fill: var(--midnight);
+    }
+  }
+  &.nepal {
+    & rect {
+      fill: var(--nepal);
+    }
+  }
+  &.red {
+    & rect {
+      fill: var(--ruddy);
+    }
+  }
+  &.light {
+    & use {
+      fill: var(--nepal);
+    }
+    & rect {
+      fill: var(--zumthor);
+    }
+  }
+}
+
+.logo {
+  & use {
+    transform: translate(16px, 16px);
+  }
+}
+
+.image {
+  display: inline-block;
+  vertical-align: middle;
+  background-size: cover;
+}
+
+:global(.ui-profile) {
+  background-color: color(var(--nepal) a(20%));
+}

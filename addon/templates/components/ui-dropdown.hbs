@@ -1,0 +1,50 @@
+{{#basic-dropdown horizontalPosition=horizontalPosition verticalPosition=verticalPosition
+                  renderInPlace=renderInPlace as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{#if isSubDropdown}}
+      {{ui-item label=text color=color icon=icon afterIcon='arrows-16px-2_small-right' data-theme=data-theme}}
+    {{else}}
+      {{#if input}}
+        {{ui-input placeholder=placeholder extend=true}}
+      {{else}}
+        {{ui-button text=text color=color size=size icon=icon customColor=customColor type=type image=image radius=radius
+                    iconSize=iconSize viewBox=viewBox loading=loading extend=true data-theme=data-theme}}
+      {{/if}}
+    {{/if}}
+  {{/dropdown.trigger}}
+
+  {{#dropdown.content local-class=(if isSubDropdown 'sub-content')}}
+    <div class="option-contents" data-theme={{data-theme}}>
+      {{#if optgroup}}
+        <div class="optgroup">{{optgroup}}</div>
+      {{/if}}
+      {{#if isSubDropdown}}
+        {{yield}}
+      {{else}}
+        {{yield
+          (hash
+            label=text
+            dropdown=dropdown
+          )
+          (hash
+            item=(component
+              'ui-item'
+              inList=true
+              listId=elementId
+              onClick=(pipe (action "selectItem") dropdown.actions.close)
+            )
+            dropdown=(component
+              'ui-dropdown'
+              renderInPlace=true
+              horizontalPosition=horizontalPosition
+              verticalPosition=verticalPosition
+              isSubDropdown=true
+              onClick=(pipe (action "selectItem") dropdown.actions.close)
+            )
+          )
+        }}
+      {{/if}}
+
+    </div>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

@@ -1,0 +1,15 @@
+{{#each notification as |n|}}
+  <div class="notification"
+       local-class="instance {{unless (get n 'dismiss') 'in' }} {{n.type}}"
+       onmouseenter={{action "pause" n}}
+         onmouseleave={{action "resume" n}}>
+
+    {{{n.message}}}
+
+    <span local-class="close" onclick={{action "close" n}}>x</span>
+
+    {{#if n.remaining}}
+      <div local-class="countdown" style={{n.countdownStyle}}></div>
+    {{/if}}
+  </div>
+{{/each}}

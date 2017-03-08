@@ -1,0 +1,160 @@
+<nav class="contents-nav">
+  {{#ui-dropdown text='Size'
+                 color='stroked'
+                 size ='medium'
+                 icon ='ui-16px-1_preferences'
+                 horizontalPosition="right" as | config |}}
+    <div class="option-contents">
+      {{ui-item 'huge'  icon='ui-16px-2_grid-square' active=(eq config.text "huge")
+                onClick=(action (queue (action config.onClick "huge" 'ui-16px-2_grid-square') (action 'setButtonSize' 'huge')))}}
+      {{ui-item 'big'  active=(eq config.text "big")
+                onClick=(action (queue (action config.onClick "big") (action 'setButtonSize' 'big')))}}
+      {{ui-item 'large' active=(eq config.text "large")
+                onClick=(action (queue (action config.onClick "large") (action 'setButtonSize' 'large')))}}
+      {{ui-item 'medium' active=(eq config.text "medium")
+                onClick=(action (queue (action config.onClick "medium") (action 'setButtonSize' 'medium')))}}
+      {{ui-item 'small' active=(eq config.text "small")
+                onClick=(action (queue (action config.onClick "small") (action 'setButtonSize' 'small')))}}
+    </div>
+  {{/ui-dropdown}}
+</nav>
+
+<section>
+  {{ui-button size size=size}}
+  {{ui-button size color='blue' size=size}}
+  {{ui-button size color='lime' size=size}}
+  {{ui-button size color='stroked' size=size}}
+  {{ui-button size color='transparent' size=size}}
+  <div class="code inSection">
+    Default Setting: <p>size: 'medium', color: 'blue',</p>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'blue'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'lime'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'stroked'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'transparent'</i><span>}}</span>
+  </div>
+</section>
+<section>
+  {{ui-button size size=size customBackground='#AB7DF6'}}
+  {{ui-button size size=size customBackground='#FACA00'}}
+  {{ui-button size size=size customBackground='#26C2C9'}}
+  {{ui-button size size=size customBackground='#FD7B1F'}}
+  <div class="code inSection">
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customBackground=<i>'#AB7DF6'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customBackground=<i>'#FACA00'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customBackground=<i>'#26C2C9'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customBackground=<i>'#FD7B1F'</i><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-button size size=size customColor='#AB7DF6'}}
+  {{ui-button size size=size customColor='#FACA00'}}
+  {{ui-button size size=size customColor='#26C2C9'}}
+  {{ui-button size size=size customColor='#FD7B1F'}}
+  <div class="code inSection">
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customColor=<i>'#AB7DF6'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customColor=<i>'#FACA00'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customColor=<i>'#26C2C9'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customColor=<i>'#FD7B1F'</i><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-button size size=size customBackground='#AB7DF6' customColor='#FFF'}}
+  {{ui-button size size=size customBackground='#FACA00' customColor='#FFF'}}
+  {{ui-button size size=size customBackground='#26C2C9' customColor='#FFF'}}
+  {{ui-button size size=size customBackground='#FD7B1F' customColor='#FFF'}}
+  <div class="code inSection">
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customBackground=<i>'#AB7DF6'</i> customColor=<i>'#FFF'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customBackground=<i>'#FACA00'</i> customColor=<i>'#FFF'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customBackground=<i>'#26C2C9'</i> customColor=<i>'#FFF'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customBackground=<i>'#FD7B1F'</i> customColor=<i>'#FFF'</i><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-button size size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button size color='blue' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button size color='lime' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button size color='stroked' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button size color='transparent' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button size customBackground='#FD7B1F' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button size customBackground='#26C2C9' customColor='#FFF' size=size icon='ui-16px-2_favourite-31'}}
+  <div class="code inSection">
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> icon=<u>'ICON'</u><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'blue'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'lime'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'stroked'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'transparent'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> customBackground=<i>'#FD7B1F'</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> customBackground=<i>'#26C2C9'</i> customColor=<i>'#FFF'</i><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-button size customBackground='#26C2C9' size=size type='image' image=(fake "image.avatar") radius='4'
+              iconSize='24' viewBox='24'}}
+  {{#ui-button size size=size customColor='#FACA00'}}
+    {{ui-icon 24 24 type='image' radius='12' image=(fake "image.avatar")}}
+  {{/ui-button}}
+  {{#ui-button size size=size customColor='#FD7B1F'}}
+    {{ui-icon 'ui-16px-3_heart' iconColor=customColor}}
+  {{/ui-button}}
+  <div class="code inSection">
+    <span>\{{ui-button</span> <u>'{{size}}'</u> customBackground=<i>'#26C2C9'</i> size=<b>'{{size}}'</b>
+    type=<i>'image'</i> image=<u>'IMAGE'</u> radius=<i>'4'</i> iconSize=<i>'24'</i> viewBox=<i>'24'</i><span>}}</span>
+    <span>\{{#ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customColor=<i>'#FACA00'</i><span>}}</span>
+    <span class="indent">\{{ui-icon</span> <i>24</i> <i>24</i> type=<i>'image'</i> radius=<i>'12'</i>
+    <u>'IMAGE'</u><span>}}</span>
+    <span>\{{/ui-button}}</span>
+    <span>\{{#ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> customColor=<i>'#FD7B1F'</i><span>}}</span>
+    <span class="indent">\{{ui-icon</span> <u>'ICON'</u> iconColor=<b>customColor</b><span>}}</span>
+    <span>\{{/ui-button}}</span>
+  </div>
+</section>
+<section>
+  {{ui-button size size=size extend=true}}
+  {{ui-button size color='blue' size=size extend=true}}
+  {{ui-button size color='lime' size=size extend=true}}
+  {{ui-button size color='stroked' size=size extend=true}}
+  {{ui-button size color='transparent' size=size extend=true}}
+  <div class="code inSection">
+    Default Setting: <p>size: 'medium', color: 'blue',</p>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> extend=<i>true</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'blue'</i> extend=<i>true</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'lime'</i> extend=<i>true</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'stroked'</i> extend=<i>true</i><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'transparent'</i> extend=<i>true</i><span>}}</span>
+  </div>
+</section>
+<section>
+  {{ui-button size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button color='blue' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button color='lime' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button color='stroked' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button color='transparent' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button color='transparent' customColor='#AB7DF6' size=size icon='ui-16px-2_favourite-31'}}
+  {{ui-button customBackground='#26C2C9' size=size icon='ui-16px-2_favourite-31'}}
+  <div class="code inSection">
+    <span>\{{ui-button</span> size=<b>'{{size}}'</b> icon=<u>'ICON'</u><span>}}</span>
+    <span>\{{ui-button</span> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'blue'</i><span>}}</span>
+    <span>\{{ui-button</span> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'lime'</i><span>}}</span>
+    <span>\{{ui-button</span> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'stroked'</i><span>}}</span>
+    <span>\{{ui-button</span> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'transparent'</i><span>}}</span>
+    <span>\{{ui-button</span> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> color=<i>'transparent'</i> customColor=<u>'#AB7DF6'</u><span>}}</span>
+    <span>\{{ui-button</span> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> customBackground=<u>'#26C2C9'</u><span>}}</span>
+  </div>
+</section>
+<section>
+  {{ui-button size size=size color='blue' icon='ui-16px-2_favourite-31' loading=true}}
+  {{ui-button size size=size icon='ui-16px-2_favourite-31' disabled=true}}
+  {{ui-button size=size icon='ui-16px-2_favourite-31' disabled=true}}
+  <div class="code inSection">
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> color=<i>'blue'</i> icon=<u>'ICON'</u>
+    loading=<u>true</u><span>}}</span>
+    <span>\{{ui-button</span> <u>'{{size}}'</u> size=<b>'{{size}}'</b> icon=<u>'ICON'</u>
+    disabled=<u>true</u><span>}}</span>
+    <span>\{{ui-button</span> size=<b>'{{size}}'</b> icon=<u>'ICON'</u> disabled=<b>true</b><span>}}</span>
+  </div>
+</section>

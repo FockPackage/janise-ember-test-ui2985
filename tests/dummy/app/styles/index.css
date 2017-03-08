@@ -1,0 +1,47 @@
+@import "custom";
+
+.index {
+  text-align: center;
+  position: relative;
+  & h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  & p {
+    color: var(--nepal);
+    max-width: 72%;
+    margin: 0 auto;
+  }
+}
+
+:global(.preview-main) {
+  &[data-theme="bright"] {
+    & .index {
+      background-color: var(--white);
+    }
+  }
+  &[data-theme="dark"] {
+    & .index {
+      background-color: var(--midnight);
+    }
+  }
+}
+
+.wrapper {
+  min-height: calc(calc(100vh - 53px) - 8rem);
+  padding-bottom: 96px;
+}
+
+.ember-logo {
+  width: 250px;
+  height: 250px;
+  margin: 2rem auto;
+  background-image: url(http://emberjs.com/images/about/ember-productivity-sm_x2.png);
+  background-size: 250px 250px;
+}
+
+.footer {
+  margin: -96px 0 0 0;
+  padding: 2rem 0 0 0;
+}

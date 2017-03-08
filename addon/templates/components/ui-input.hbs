@@ -1,0 +1,41 @@
+{{#if label}}
+  <label for={{inputID}}>{{label}}</label>
+{{/if}}
+{{#if icon}}
+  <div local-class="{{concat 'label-icon ' inside}}">
+    {{ui-icon icon}}
+  </div>
+{{/if}}
+<div local-class="wrapper {{if error 'error'}} {{if extend 'extend'}}">
+  {{#if spinner}}
+    <a local-class="increase">{{ui-icon 'ui-16px-1_simple-add'}}</a>
+    <a local-class="decrease">{{ui-icon 'ui-16px-1_simple-delete'}}</a>
+  {{/if}}
+  {{#if units}}
+    <i local-class="units">{{units}}</i>
+  {{/if}}
+  {{input
+    type=type
+    name=name
+    placeholder=placeholder
+    value=value
+    required=true
+    disabled=disabled
+    readonly=readonly
+    key-up=onKeyUp
+    enter=onEnter}}
+  {{#if placeholderIcon}}
+    {{ui-icon icon=placeholderIcon}}
+  {{/if}}
+  {{#if error}}
+    <div local-class="message">
+      <span>{{error}}</span>
+    </div>
+  {{/if}}
+  {{#if extend}}
+    <div local-class="extend">
+      {{ui-icon 'arrows-16px-1_small-triangle-down'}}
+    </div>
+  {{/if}}
+  {{yield}}
+</div>

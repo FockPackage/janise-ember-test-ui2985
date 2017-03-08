@@ -1,0 +1,137 @@
+@import "../custom";
+
+/*------------------- Style -------------------*/
+:global(.ui-popup)  {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  &:before {
+    font-size: smaller;
+    line-height: normal;
+    position: absolute;
+    display: none;
+    white-space: nowrap;
+    max-width: calc(var(--offset) * 8);
+    padding: 6px;
+    content: attr(data-tooltip);
+    text-align: left;
+    pointer-events: none;
+    border-radius: 3px;
+    z-index: var(--ui-popup);
+  }
+  &:after {
+    position: absolute;
+    display: none;
+    content: '';
+    border-width: 6px;
+    border-style: solid;
+    z-index: var(--ui-popup);
+  }
+  &.top {
+    &:before {
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      top: calc(100% - 4px);
+      left: 50%;
+      margin-left: -6px;
+    }
+  }
+  &.bottom {
+    &:before {
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      bottom: calc(100% - 4px);
+      left: 50%;
+      margin-left: -6px;
+    }
+  }
+  &.left {
+    &:before {
+      top: 50%;
+      left: calc(100% + 8px);
+      transform: translateY(-50%);
+    }
+    &:after {
+      top: 50%;
+      left: calc(100% - 4px);
+      margin-top: -6px;
+    }
+  }
+  &.right {
+    &:before {
+      top: 50%;
+      right: calc(100% + 8px);
+      transform: translateY(-50%);
+    }
+    &:after {
+      top: 50%;
+      right: calc(100% - 4px);
+      margin-top: -6px;
+    }
+  }
+  &:hover {
+    &:after,
+    &:before {
+      display: block;
+    }
+  }
+  /*------------------- Color -------------------*/
+  &[data-theme="bright"] {
+    &:before {
+      color: var(--white);
+      background-color: color(black a(80%));
+    }
+    &.top {
+      &:after {
+        border-color: transparent transparent color(black a(80%)) transparent;
+      }
+    }
+    &.bottom {
+      &:after {
+        border-color: color(black a(80%)) transparent transparent transparent;
+      }
+    }
+    &.left {
+      &:after {
+        border-color: transparent color(black a(80%)) transparent transparent;
+      }
+    }
+    &.right {
+      &:after {
+        border-color: transparent transparent transparent color(black a(80%));
+      }
+    }
+  }
+  &[data-theme="dark"] {
+    &:before {
+      color: var(--fiord);
+      background-color: white;
+    }
+    &.top {
+      &:after {
+        border-color: transparent transparent white transparent;
+      }
+    }
+    &.bottom {
+      &:after {
+        border-color: white transparent transparent transparent;
+      }
+    }
+    &.left {
+      &:after {
+        border-color: transparent white transparent transparent;
+      }
+    }
+    &.right {
+      &:after {
+        border-color: transparent transparent transparent white;
+      }
+    }
+  }
+}

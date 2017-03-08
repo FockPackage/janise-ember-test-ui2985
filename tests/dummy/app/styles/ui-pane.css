@@ -1,0 +1,7 @@
+@import "custom";
+
+.pane {
+  & :global(.code) {
+    padding: 0 1rem 1.5rem 1rem;
+  }
+}

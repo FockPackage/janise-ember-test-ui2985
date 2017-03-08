@@ -1,0 +1,32 @@
+{{#if (eq state 'attachments')}}
+  <div local-class="attachments {{blank}} {{custom}}" style={{concat attachmentImage attachmentColor}}></div>
+{{/if}}
+{{#if (or icon image)}}
+  {{ui-icon icon=icon size=size viewBox=viewBox type=type color=color fill=iconColor iconColor=iconColor image=image radius=radius}}
+{{/if}}
+{{#if (or label subLabel name time)}}
+  <div local-class={{concat "label " align}}>
+    {{#if (or name time)}}
+      <h5>{{name}}<span>{{time}}</span></h5>
+    {{/if}}
+    {{#if label}}
+      <p>{{label}}
+        {{#if badges}}
+          <span local-class='{{badgesColor}}'>{{badges}}</span>
+        {{/if}}
+      </p>
+    {{/if}}
+    {{#if subLabel}}
+      <span>
+        {{#if subIcon}}
+          {{ui-icon icon=subIcon size='12'}}
+        {{/if}}
+        {{subLabel}}
+        </span>
+    {{/if}}
+    {{yield}}
+  </div>
+{{/if}}
+{{#if afterIcon}}
+  {{ui-icon afterIcon 16 16}}
+{{/if}}

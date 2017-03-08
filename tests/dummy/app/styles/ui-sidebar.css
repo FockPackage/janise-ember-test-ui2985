@@ -1,0 +1,19 @@
+.sidebar {
+  & :global(.ui-pane) {
+    & > div {
+      & > div {
+        width: 100%;
+        & section {
+          display: flex;
+          padding: 0;
+          & > div {
+            &[data-state="right"] {
+              margin-left: auto;
+              flex-grow: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<section>
+  {{#ui-dropdown text='Control'
+                 color='lime'
+                 size ='medium'
+                 horizontalPosition="auto" as |config content|}}
+    {{content.item 'ui-icon' 'ui-16px-2_favourite-31' activeColor='lime' active=(eq config.label "ui-icon")}}
+    {{content.item 'ui-button' 'tech-16px-2_socket-europe-2' activeColor='lime' active=(eq config.label "ui-button")}}
+    {{content.item 'ui-input' 'design-16px-2_text' activeColor='lime' active=(eq config.label "ui-input")}}
+    {{content.item 'ui-checkbox' 'ui-16px-1_check-square-09' activeColor='lime' active=(eq config.label "ui-checkbox")}}
+    {{ui-button 'Content Button' color='lime' class='dropdown-control-button'}}
+  {{/ui-dropdown}}
+</section>
+<div class="code">
+
+</div>

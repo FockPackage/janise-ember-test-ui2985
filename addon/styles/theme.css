@@ -1,0 +1,59 @@
+@import "./custom";
+
+/*------------------- Theme -------------------*/
+
+:global(.theme) {
+  &:global(.bright) {
+    color: var(--fiord);
+    & a {
+      &[href] {
+        color: currentColor;
+        &:active {
+          color: var(--fiord);
+        }
+      }
+    }
+  }
+  &:global(.dark) {
+    color: var(--zumthor);
+    & a {
+      &[href] {
+        color: currentColor;
+        &:active {
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+/*------------------- responsive -------------------*/
+
+:global(html.desktop) {
+  & :global(.theme) {
+    &:global(.bright) {
+      & a {
+        &[href] {
+          &:hover {
+            color: color(var(--nepal) blackness(10%));
+          }
+          &:active {
+            color: var(--fiord);
+          }
+        }
+      }
+    }
+    &:global(.dark) {
+      & a {
+        &[href] {
+          &:hover {
+            color: color(var(--white) a(70%));
+          }
+          &:active {
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+}

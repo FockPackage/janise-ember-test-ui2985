@@ -1,0 +1,12 @@
+{{input type=type color=color name=name checked=checked value=value required=required disabled=disabled}}
+<label>
+  {{#if switch}}
+  {{else}}
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 18 18">
+      <g><polygon points="13.4,7.5 12,6.1 8,10.1 6,8.1 4.6,9.5 8,12.9 "></polygon></g>
+    </svg>
+  {{/if}}
+  {{#if label}}
+    <span>{{label}}</span>
+  {{/if}}
+</label>

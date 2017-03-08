@@ -1,0 +1,12 @@
+<section class="preview-container" local-class="input">
+  {{#ui-pane class='ui-pane-preview'}}
+    {{#ui-sidebar width='120px' position='left'}}
+      {{ui-item 'Basic' divider=true route='ui-input.index'}}
+      {{ui-item '+ Icon' divider=true route='ui-input.icon'}}
+      {{ui-item 'Spinner' divider=true route='ui-input.spinner'}}
+      {{ui-item 'Error' divider=true route='ui-input.warning'}}
+      {{ui-item 'Background' divider=true route='ui-input.background'}}
+    {{/ui-sidebar}}
+    {{outlet}}
+  {{/ui-pane}}
+</section>

@@ -1,0 +1,9 @@
+.item {
+  & :global(.ui-pane) {
+    & > div {
+      & section {
+        padding: 0;
+      }
+    }
+  }
+}

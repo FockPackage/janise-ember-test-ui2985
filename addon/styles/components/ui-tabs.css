@@ -1,0 +1,8 @@
+@import "../custom";
+
+/*------------------- Style -------------------*/
+:global(.ui-tabs) {
+  & .active {
+    background-color: red;
+  }
+}

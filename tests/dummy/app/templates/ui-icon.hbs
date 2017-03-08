@@ -1,0 +1,11 @@
+<section class="preview-container" local-class="icon">
+  {{#ui-pane class='ui-pane-preview'}}
+    {{#ui-sidebar width='120px' position='left'}}
+      {{ui-item 'Basic' divider=true route='ui-icon.index'}}
+      {{ui-item 'Symbols' divider=true route='ui-icon.symbols'}}
+      {{ui-item 'Logo' divider=true route='ui-icon.logo'}}
+      {{ui-item 'Profile' divider=true route='ui-icon.profile'}}
+    {{/ui-sidebar}}
+    {{outlet}}
+  {{/ui-pane}}
+</section>

@@ -1,0 +1,176 @@
+@import "../custom";
+
+/*------------------- Style -------------------*/
+:global(.ui-table) {
+  border-radius: var(--border-radius-m);
+  overflow-x: auto;
+  & table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    & thead {
+      white-space: nowrap;
+      font-size: calc(var(--font-size) * .8);
+      text-transform: uppercase;
+      & tr {
+        & th {
+          padding: calc(var(--offset) / 4) calc(var(--offset) / 2);
+          & .thead {
+            float: left;
+            padding-right: calc(var(--offset) / 2);
+            position: relative;
+            & a {
+              & + svg {
+                position: absolute 0 0 0 auto;
+                margin: auto 0;
+                display: none;
+              }
+            }
+            &[data-state="ascending"] {
+              & a {
+                & + svg {
+                  display: inline-block;
+                }
+              }
+            }
+            &[data-state="descending"] {
+              & a {
+                & + svg {
+                  display: inline-block;
+                  transform: rotate(180deg);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    & tbody {
+      & tr {
+        & td {
+          padding: 0 calc(var(--offset) / 2);
+          /* Draggable */
+          & .draggable {
+            cursor: -webkit-grab;
+            &:active {
+              cursor: -webkit-grabbing;
+            }
+          }
+        }
+      }
+    }
+  }
+  &[data-state="select"] {
+    & table {
+      & tbody {
+        & tr {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  /*------------------- Color -------------------*/
+  &[data-theme="bright"] {
+    background-color: var(--white);
+    & table {
+      & thead {
+        color: var(--nepal);
+        border-bottom: 1px solid color(var(--light-steel-blue) a(50%));
+      }
+      & tbody {
+        border-color: color(var(--light-steel-blue) a(20%));
+        & tr {
+          &:not(:last-of-type) {
+            border-bottom: 1px solid color(var(--light-steel-blue) a(20%));
+          }
+          &.active {
+            background-color: var(--alabaster);
+            box-shadow: inset 2px 0 0 0 var(--cool-blue);
+          }
+          &:global(.sortable-chosen) {
+            box-shadow: 0 2px 4px 2px color(var(--black) a(20%));
+          }
+          &:global(.sortable-ghost) {
+            background-color: var(--zumthor);
+          }
+        }
+      }
+    }
+  }
+  &[data-theme="dark"] {
+    background-color: color(var(--catalina-blue) a(60%));
+    & table {
+      & thead {
+        color: var(--nepal);
+        border-bottom: 1px solid var(--midnight);
+      }
+      & tbody {
+        border-color: color(var(--midnight) a(60%));
+        & tr {
+          &:not(:last-of-type) {
+            border-bottom: 1px solid color(var(--midnight) a(60%));
+          }
+          &.active {
+            background-color: color(var(--midnight) a(50%));
+            box-shadow: inset 2px 0 0 0 var(--dull-lime);
+          }
+          &:global(.sortable-chosen) {
+            box-shadow: 0 2px 4px 2px color(var(--black) a(20%));
+          }
+          &:global(.sortable-ghost) {
+            background-color: color(var(--white) a(10%));
+          }
+        }
+      }
+    }
+  }
+}
+
+/*------------------- responsive -------------------*/
+:global(html.desktop) {
+  & :global(.ui-table) {
+    &[data-theme="bright"] {
+      &[data-state="select"] {
+        & table {
+          & tbody {
+            & tr {
+              &:not(.active) {
+                &:hover {
+                  background-color: color(var(--alabaster) a(60%));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &[data-theme="dark"] {
+      &[data-state="select"] {
+        & table {
+          & tbody {
+            & tr {
+              &:not(.active) {
+                &:hover {
+                  background-color: color(var(--midnight) a(20%));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+:global(html.tablet) {
+  & :global(.ui-table) {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+:global(html.mobile) {
+  & :global(.ui-table) {
+    -webkit-overflow-scrolling: touch;
+  }
+}

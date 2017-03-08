@@ -1,0 +1,57 @@
+<section>
+  {{#ui-grid}}
+    <div class='column eight'>
+      {{#ui-d3-chart model.data responsive=false as |chart|}}
+        {{chart.axis scale="band" position="bottom"}}
+        {{chart.axis scale="linear" position="left"}}
+        {{chart.line xScale="linear" yScale="linear" curve="Cardinal" stroke="url(#gradient1)" stroke-width=3}}
+        {{chart.gradient name="gradient1" direction="horizontal" colors="#0093EE #4ECE3D"}}
+      {{/ui-d3-chart}}
+    </div>
+    <div class='column eight'>
+      {{#ui-d3-chart model.data responsive=false as |chart|}}
+        {{chart.axis scale="band" position="bottom"}}
+        {{chart.axis scale="linear" position="left"}}
+        {{chart.area xScale="linear" yScale="linear" curve='Cardinal' fill="url(#gradient1)"}}
+        {{chart.gradient name="gradient2" direction="horizontal" colors="#0093EE #4ECE3D"}}
+      {{/ui-d3-chart}}
+    </div>
+  {{/ui-grid}}
+</section>
+
+<section>
+  {{#ui-grid}}
+    <div class='column eight'>
+      {{#ui-d3-chart model.data responsive=false as |chart|}}
+        {{chart.grid xScale="band" yScale=false style=(style opacity="0.1")}}
+        {{chart.axis scale="band" position="bottom" tick-size=0}}
+        {{chart.axis scale="linear" position="left" tick-size=0}}
+        {{chart.line xScale="linear" yScale="linear" curve="Cardinal" style=(style color="#0093EE" stroke-width="2")}}
+        {{chart.area xScale="linear" yScale="linear" curve="Cardinal" fill="url(#vrainbow)"}}
+        {{chart.gradient name="vrainbow" colors="0%:#0093EE 100%:rgba(0,147,238,0)"}}
+      {{/ui-d3-chart}}
+    </div>
+    <div class='column eight'>
+      {{#ui-d3-chart model.data responsive=false as |chart|}}
+        {{chart.axis scale="band" position="bottom"}}
+        {{chart.axis scale="linear" position="left"}}
+        {{chart.rect xScale="band" yScale="linear" type="column" padding=0.4 style=(style color='#0093EE')}}
+      {{/ui-d3-chart}}
+    </div>
+  {{/ui-grid}}
+</section>
+
+<section>
+  {{#ui-grid}}
+    <div class='column eight'>
+      {{#ui-d3-chart model.data responsive=false as |chart|}}
+        {{chart.grid xScale=false yScale="linear" style=(style opacity="0.1")}}
+        {{chart.axis scale="band" position="bottom"}}
+        {{chart.axis scale="linear" position="left"}}
+        {{chart.line xScale="linear" yScale="linear" curve="MonotoneX" style=(style color='#AB7DF6' stroke-width='3px' stroke-opacity='0.6') }}
+        {{chart.scatter xScale="band" yScale="linear" radius=8  style=(style stroke-width='3px' fill='white' stroke='#0093EE')}}
+      {{/ui-d3-chart}}
+    </div>
+    <div class='column eight'></div>
+  {{/ui-grid}}
+</section>

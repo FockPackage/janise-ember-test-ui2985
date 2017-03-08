@@ -1,0 +1,771 @@
+@import "../custom";
+
+/*------------------- Style -------------------*/
+:global(.ui-input) {
+  position: relative;
+  backface-visibility: hidden;
+  /* Label icon */
+  & .label-icon {
+    float: left;
+    width: calc(var(--offset) * .8);
+    & svg {
+      fill: var(--nepal);
+    }
+    & + .wrapper {
+      display: inline-block;
+      width: calc(100% - calc(var(--offset) * .8));
+    }
+    &.inside {
+      position: absolute 0 auto 0 0;
+      width: auto;
+      padding: 0 calc(var(--offset) / 2);
+      & + .wrapper {
+        & input {
+          padding-left: calc(var(--offset) * 1.5);
+        }
+      }
+    }
+  }
+  & .wrapper {
+    position: relative;
+    & textarea,
+    & input {
+      line-height: var(--font-size);
+      width: calc(100% - var(--offset));
+      padding: 0 calc(var(--offset) / 2);
+      resize: none;
+      border-radius: var(--border-radius-m);
+      border: none;
+      outline: none;
+      background-color: transparent;
+      transition: box-shadow 100ms ease, background-color 100ms ease;
+      -webkit-appearance: none;
+      appearance: none;
+      &::-webkit-input-placeholder {
+        -webkit-user-select: none;
+        user-select: none;
+        line-height: normal;
+      }
+      &:invalid {
+        & + svg {
+          display: block;
+        }
+      }
+      &:valid {
+        & + svg {
+          display: none;
+        }
+      }
+      &:focus {
+        & + svg {
+          opacity: 0;
+        }
+        & ~ .message {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
+      /*------------------- Disabled -------------------*/
+      &[disabled] {
+        cursor: not-allowed;
+      }
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+    /* Placeholder icon */
+    & > svg {
+      fill: var(--cool-blue);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: calc(var(--offset) / 2);
+      margin: auto 0;
+      transition: opacity 200ms ease;
+    }
+    /*------------------- Message -------------------*/
+    & .message {
+      backface-visibility: hidden;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      left: calc(var(--offset) / 4);
+      bottom: calc(100% - calc(var(--offset) / 10));
+      border-radius: var(--border-radius-m);
+      padding: calc(var(--offset) / 4) calc(var(--offset) / 2);
+      font-size: calc(var(--font-size) * .7);
+      color: var(--white);
+      background-color: var(--ruddy);
+      transform: translateY(calc(var(--offset) / 4));
+      transition: transform 360ms cubic-bezier(0.215, 0.61, 0.355, 1), opacity 200ms ease, visibility 200ms ease;
+      &:before {
+        position: absolute 100% auto auto calc(var(--offset) / 4);
+        content: '';
+        border-style: solid;
+        border-width: calc(var(--offset) / 4) calc(var(--offset) / 4) 0 calc(var(--offset) / 4);
+        border-color: var(--ruddy) transparent transparent transparent;
+      }
+    }
+    /*------------------- extend -------------------*/
+    & .extend {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: calc(var(--offset) / 3);
+      margin: auto 0;
+      & svg {
+        float: left;
+        transition: fill 200ms ease;
+      }
+    }
+    &.extend {
+      & input {
+        padding-right: var(--offset);
+        width: calc(100% - calc(var(--offset) * 1.5));
+      }
+    }
+    /*------------------- Spinner -------------------*/
+    & > a {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      & svg {
+        position: absolute 0 0 0 0;
+        margin: auto;
+      }
+    }
+    /* + */
+    & .increase {
+      right: 0;
+    }
+    /* - */
+    & .decrease {
+      left: 0;
+    }
+    /*------------------- Units -------------------*/
+    & .units {
+      -webkit-user-select: none;
+      user-select: none;
+      text-align: center;
+      width: var(--offset);
+      overflow: hidden;
+      pointer-events: none;
+      color: var(--nepal);
+      font-size: calc(var(--font-size) * .8);
+      position: absolute;
+    }
+  }
+  /*------------------- Size -------------------*/
+  &.large {
+    & .wrapper {
+      /* Spinner */
+      & > a {
+        width: calc(var(--offset) * 1.3125);
+        height: calc(var(--offset) * 1.3125);
+        & ~ input {
+          text-align: center;
+          width: calc(100% - calc(calc(var(--offset) * 1.3125) * 2));
+          padding: 0 calc(var(--offset) * 1.3125);
+        }
+      }
+      /* Units */
+      & .units {
+        line-height: calc(var(--offset) * 1.3125);
+        right: calc(var(--offset) * 1.3125);
+        & + input {
+          width: calc(100% - calc(calc(calc(var(--offset) * 1.3125) * 2) + var(--offset)));
+          padding-right: calc(calc(var(--offset) * 1.3125) + var(--offset));
+        }
+      }
+    }
+    & input {
+      font-size: var(--font-size);
+      height: calc(var(--offset) * 1.3125);
+    }
+    & .label-icon {
+      height: calc(var(--offset) * 1.3125);
+      line-height: calc(var(--offset) * 1.3125);
+    }
+  }
+  &.medium {
+    & .wrapper {
+      /* Spinner */
+      & > a {
+        width: calc(var(--offset) * 1.125);
+        height: calc(var(--offset) * 1.125);
+        & ~ input {
+          text-align: center;
+          width: calc(100% - calc(calc(var(--offset) * 1.125) * 2));
+          padding: 0 calc(var(--offset) * 1.125);
+        }
+      }
+      /* Units */
+      & .units {
+        line-height: calc(var(--offset) * 1.125);
+        right: calc(var(--offset) * 1.125);
+        & + input {
+          width: calc(100% - calc(calc(calc(var(--offset) * 1.125) * 2) + var(--offset)));
+          padding-right: calc(calc(var(--offset) * 1.125) + var(--offset));
+        }
+      }
+    }
+    & input {
+      font-size: calc(var(--font-size) * .9);
+      height: calc(var(--offset) * 1.125);
+    }
+    & .label-icon {
+      height: calc(var(--offset) * 1.125);
+      line-height: calc(var(--offset) * 1.125);
+    }
+  }
+  /*------------------- Label -------------------*/
+  & label {
+    display: block;
+    color: var(--nepal);
+    & + .wrapper {
+      margin-top: calc(var(--offset) / 4);
+    }
+  }
+  &[data-state="disabled"] {
+    /*------------------- Spinner -------------------*/
+    & .wrapper {
+      & > a {
+        pointer-events: none;
+      }
+    }
+  }
+  /*------------------- Color -------------------*/
+  &[data-theme="bright"] {
+    & .wrapper {
+      & > a {
+        & svg {
+          fill: var(--nepal);
+        }
+        &:active {
+          & svg {
+            fill: var(--fiord);
+          }
+        }
+      }
+      & textarea,
+      & input {
+        color: var(--fiord);
+        box-shadow: inset 0 0 0 1px var(--light-steel-blue);
+        &:valid {
+          background-color: color(var(--zumthor) a(50%));
+        }
+        &:focus {
+          background-color: color(var(--zumthor) a(50%));
+          box-shadow: inset 0 0 0 1px var(--light-steel-blue), inset 0 0 0 3px var(--zumthor);
+        }
+        &::-webkit-input-placeholder {
+          color: var(--light-steel-blue);
+        }
+        &::selection {
+          background-color: var(--light-steel-blue);
+        }
+        /*------------------- Disabled -------------------*/
+        &[disabled] {
+          background-color: color(var(--fiord) a(5%));
+          box-shadow: inset 0 0 0 1px color(var(--fiord) a(40%));
+          &::-webkit-input-placeholder {
+            color: color(var(--fiord) a(40%));
+          }
+          & + svg {
+            fill: color(var(--fiord) a(40%));
+          }
+        }
+        /*------------------- Readonly -------------------*/
+        &[readonly] {
+          & + svg {
+            fill: color(var(--fiord) a(40%));
+          }
+        }
+      }
+      &.error {
+        & textarea,
+        & input {
+          box-shadow: inset 0 0 0 1px var(--ruddy);
+          &:focus {
+            background-color: color(var(--ruddy) a(20%));
+            box-shadow: inset 0 0 0 1px var(--ruddy);
+          }
+          &::-webkit-input-placeholder {
+            color: color(var(--ruddy) a(50%));
+          }
+        }
+        & > svg {
+          fill: var(--ruddy);
+        }
+      }
+    }
+    &[data-state="disabled"] {
+      /* Label icon */
+      & .label-icon {
+        & svg {
+          fill: color(var(--fiord) a(50%));
+        }
+      }
+      /*------------------- Spinner -------------------*/
+      & .wrapper {
+        & > a {
+          & svg {
+            fill: color(var(--fiord) a(50%));
+          }
+        }
+      }
+    }
+  }
+  &[data-theme="dark"] {
+    & .wrapper {
+      & > a {
+        & svg {
+          fill: var(--nepal);
+        }
+        &:active {
+          & svg {
+            fill: var(--zumthor);
+          }
+        }
+      }
+      & textarea,
+      & input {
+        color: var(--zumthor);
+        box-shadow: inset 0 0 0 1px var(--fiord);
+        &:valid {
+          background-color: color(var(--midnight) a(50%));
+        }
+        &:focus {
+          background-color: color(var(--midnight) a(50%));
+          box-shadow: inset 0 0 0 1px var(--fiord), inset 0 0 0 3px color(var(--midnight) a(50%));
+        }
+        &::-webkit-input-placeholder {
+          color: var(--nepal);
+        }
+        &::selection {
+          background-color: var(--light-steel-blue);
+        }
+        /*------------------- Disabled -------------------*/
+        &[disabled] {
+          background-color: color(var(--nepal) a(10%));
+          box-shadow: inset 0 0 0 1px color(var(--nepal) a(30%));
+          &::-webkit-input-placeholder {
+            color: color(var(--nepal) a(30%));
+          }
+          & + svg {
+            fill: color(var(--nepal) a(30%));
+          }
+        }
+        /*------------------- Readonly -------------------*/
+        &[readonly] {
+          & + svg {
+            fill: color(var(--nepal) a(30%));
+          }
+        }
+      }
+      &.error {
+        & textarea,
+        & input {
+          background-color: color(var(--midnight) a(50%));
+          box-shadow: inset 0 0 0 1px var(--ruddy);
+          &:focus {
+            background-color: color(var(--ruddy) a(10%));
+            box-shadow: inset 0 0 0 1px var(--ruddy);
+          }
+          &::-webkit-input-placeholder {
+            color: color(var(--ruddy) a(50%));
+          }
+        }
+        & > svg {
+          fill: var(--ruddy);
+        }
+      }
+    }
+    &[data-state="disabled"] {
+      /* Label icon */
+      & .label-icon {
+        & svg {
+          fill: color(var(--nepal) a(30%));
+        }
+      }
+      /*------------------- Spinner -------------------*/
+      & .wrapper {
+        & > a {
+          & svg {
+            fill: color(var(--nepal) a(30%));
+          }
+        }
+      }
+    }
+  }
+  &[data-theme="bright"],
+  &[data-theme="dark"] {
+    & .wrapper {
+      &.error {
+        & > a {
+          & svg {
+            fill: var(--ruddy);
+          }
+          &:active {
+            & svg {
+              fill: color(var(--ruddy) blackness(16%));
+            }
+          }
+        }
+      }
+      &.extend {
+        & input {
+          &:focus,
+          &:hover {
+            & + .extend {
+              & svg {
+                fill: currentColor;;
+              }
+            }
+          }
+          & + .extend {
+            & svg {
+              fill: var(--nepal);
+            }
+          }
+        }
+      }
+    }
+    &.white {
+      & .label-icon {
+        & svg {
+          fill: var(--white);
+        }
+      }
+      & .wrapper {
+        & > a {
+          & svg {
+            fill: color(var(--white) a(80%));
+          }
+          &:active {
+            & svg {
+              fill: var(--white);
+            }
+          }
+        }
+        & .units {
+          color: color(var(--white) a(50%));
+        }
+        & textarea,
+        & input {
+          color: var(--white);
+          background-color: color(var(--white) a(5%));
+          box-shadow: inset 0 0 0 1px color(var(--white) a(60%));
+          &:valid {
+            background-color: color(var(--white) a(10%));
+          }
+          &:focus {
+            background-color: color(var(--white) a(10%));
+            box-shadow: inset 0 0 0 1px var(--white), inset 0 0 0 3px color(var(--white) a(20%));
+          }
+          &::-webkit-input-placeholder {
+            color: color(var(--white) a(50%));
+          }
+          &::selection {
+            color: var(--catalina-blue);
+            background-color: var(--white);
+          }
+          /*------------------- Disabled -------------------*/
+          &[disabled] {
+            background-color: color(var(--fiord) a(20%));
+            box-shadow: inset 0 0 0 1px color(var(--white) a(50%));
+            &::-webkit-input-placeholder {
+              color: color(var(--white) a(50%));
+            }
+            & + svg {
+              fill: color(var(--white) a(50%));
+            }
+          }
+        }
+        &.error {
+          & textarea,
+          & input {
+            background: none;
+          }
+        }
+        & > svg {
+          fill: color(var(--white) a(80%));
+        }
+      }
+      & label {
+        color: var(--white);
+      }
+      &[data-state="disabled"] {
+        /* Label icon */
+        & .label-icon {
+          & svg {
+            fill: color(var(--white) a(50%));
+          }
+        }
+        /*------------------- Spinner -------------------*/
+        & .wrapper {
+          & > a {
+            & svg {
+              fill: color(var(--white) a(50%)) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*------------------- UI Form -------------------*/
+form:global(.ui-form) {
+  /* Horizontal */
+  &:global(.horizontal) {
+    & :global(.ui-input) {
+      & + :global(.ui-input) {
+        & label {
+          margin-top: calc(var(--offset) / 2);
+        }
+        & .wrapper {
+          &:first-child {
+            margin-top: calc(var(--offset) / 4);
+          }
+        }
+        & .label-icon {
+          margin-top: calc(var(--offset) / 4);
+          & + .wrapper {
+            margin-top: calc(var(--offset) / 4);
+          }
+        }
+      }
+    }
+  }
+  /* Vertical */
+  &:global(.vertical) {
+    display: flex;
+    flex-wrap: wrap;
+    & :global(.ui-input) {
+      align-self: flex-end;
+    }
+    &:global(.two) {
+      & :global(.ui-input) {
+        width: calc(50% - calc(var(--offset) / 4));
+        &:nth-child(odd) {
+          margin-right: calc(var(--offset) / 2);
+        }
+        &:not(:nth-child(-n+2)) {
+          & label {
+            margin-top: calc(var(--offset) / 2);
+          }
+          & .wrapper {
+            &:first-child {
+              margin-top: calc(var(--offset) / 4);
+            }
+          }
+          & .label-icon {
+            margin-top: calc(var(--offset) / 4);
+            & + .wrapper {
+              margin-top: calc(var(--offset) / 4);
+            }
+          }
+        }
+      }
+    }
+    &:global(.three) {
+      & :global(.ui-input) {
+        width: calc(33.3333% - calc(var(--offset) / 3));
+        &:not(:nth-child(3n)) {
+          margin-right: calc(var(--offset) / 2);
+        }
+        &:not(:nth-child(-n+3)) {
+          & label {
+            margin-top: calc(var(--offset) / 2);
+          }
+          & .wrapper {
+            &:first-child {
+              margin-top: calc(var(--offset) / 4);
+            }
+          }
+          & .label-icon {
+            margin-top: calc(var(--offset) / 4);
+            & + .wrapper {
+              margin-top: calc(var(--offset) / 4);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*------------------- responsive -------------------*/
+
+:global(html.desktop) {
+  & :global(.ui-input) {
+    &[data-theme="bright"] {
+      & .wrapper {
+        & textarea,
+        & input {
+          &:hover {
+            box-shadow: inset 0 0 0 1px var(--light-steel-blue), inset 0 0 0 3px var(--zumthor);
+          }
+          &:focus {
+            background-color: color(var(--zumthor) a(50%));
+            box-shadow: inset 0 0 0 1px var(--light-steel-blue), inset 0 0 0 3px var(--zumthor);
+          }
+          /*------------------- Disabled -------------------*/
+          &[disabled] {
+            &:hover {
+              box-shadow: inset 0 0 0 1px color(var(--fiord) a(40%));
+            }
+          }
+        }
+        &.error {
+          & textarea,
+          & input {
+            &:hover {
+              box-shadow: inset 0 0 0 1px var(--ruddy), inset 0 0 0 3px color(var(--ruddy) a(20%));
+            }
+            &:focus {
+              background-color: color(var(--ruddy) a(20%));
+              box-shadow: inset 0 0 0 1px var(--ruddy);
+            }
+          }
+        }
+        & > a {
+          &:hover {
+            & svg {
+              fill: color(var(--fiord) a(70%));
+            }
+          }
+          &:active {
+            & svg {
+              fill: var(--fiord);
+            }
+          }
+        }
+      }
+    }
+    &[data-theme="dark"] {
+      & .wrapper {
+        & textarea,
+        & input {
+          &:hover {
+            box-shadow: inset 0 0 0 1px var(--fiord), inset 0 0 0 3px color(var(--midnight) a(30%));
+          }
+          &:focus {
+            background-color: color(var(--midnight) a(50%));
+            box-shadow: inset 0 0 0 1px var(--fiord), inset 0 0 0 3px color(var(--midnight) a(50%));
+          }
+          /*------------------- Disabled -------------------*/
+          &[disabled] {
+            &:hover {
+              box-shadow: inset 0 0 0 1px color(var(--nepal) a(30%));
+            }
+          }
+        }
+        &.error {
+          & textarea,
+          & input {
+            &:hover {
+              box-shadow: inset 0 0 0 1px var(--ruddy), inset 0 0 0 3px color(var(--ruddy) a(20%));
+            }
+            &:focus {
+              background-color: color(var(--ruddy) a(10%));
+              box-shadow: inset 0 0 0 1px var(--ruddy);
+            }
+          }
+        }
+        & > a {
+          &:hover {
+            & svg {
+              fill: color(var(--zumthor) a(70%));
+            }
+          }
+          &:active {
+            & svg {
+              fill: var(--zumthor);
+            }
+          }
+        }
+      }
+    }
+    &[data-theme="bright"],
+    &[data-theme="dark"] {
+      & .wrapper {
+        &.error {
+          & > a {
+            &:hover {
+              & svg {
+                fill: color(var(--ruddy) a(80%));
+              }
+            }
+            &:active {
+              & svg {
+                fill: color(var(--ruddy) blackness(16%));
+              }
+            }
+          }
+        }
+      }
+      &.white {
+        & .wrapper {
+          & > a {
+            &:hover {
+              & svg {
+                fill: color(var(--white) a(70%));
+              }
+            }
+            & svg {
+              fill: color(var(--white) a(80%));
+            }
+            &:active {
+              & svg {
+                fill: var(--white);
+              }
+            }
+          }
+          & textarea,
+          & input {
+            &:hover {
+              box-shadow: inset 0 0 0 1px var(--white), inset 0 0 0 3px color(var(--white) a(20%));
+            }
+            &:focus {
+              background-color: color(var(--white) a(10%));
+              box-shadow: inset 0 0 0 1px var(--white), inset 0 0 0 3px color(var(--white) a(10%));
+            }
+            /*------------------- Disabled -------------------*/
+            &[disabled] {
+              &:hover {
+                box-shadow: inset 0 0 0 1px color(var(--white) a(50%));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+:global(html.mobile) {
+  & form:global(.ui-form) {
+    &:global(.vertical) {
+      flex-direction: column;
+      & :global(.ui-input) {
+        width: 100%;
+        margin-right: 0 !important;
+        &:not(:first-child) {
+          & label {
+            margin-top: calc(var(--offset) / 2);
+          }
+          & .wrapper {
+            margin-top: calc(var(--offset) / 4);
+          }
+        }
+      }
+    }
+  }
+}

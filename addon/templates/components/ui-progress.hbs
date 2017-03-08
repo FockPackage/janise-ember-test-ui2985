@@ -1,0 +1,14 @@
+{{#if (or label subLabel)}}
+  <p local-class="label">
+    {{{label}}}
+    {{#if subLabel}}
+      <span>{{subLabel}}</span>
+    {{/if}}
+  </p>
+{{/if}}
+
+<div local-class="bar" style={{html-safe (concat bar customColor)}}>
+  {{#if percent}}
+    <span>{{progress}}%</span>
+  {{/if}}
+</div>

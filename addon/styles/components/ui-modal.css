@@ -1,0 +1,121 @@
+@import "../custom";
+
+/*------------------- Style -------------------*/
+:global(.ui-modal) {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  min-height: 100vh;
+  user-select: none;
+  z-index: var(--ui-modal);
+}
+
+:global(.ui-modal-background) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  min-height: 100vh;
+  transform-origin: center center;
+  transition: background-color .5s linear;
+  background-color: color(var(--midnight) a(95%));
+  will-change: opacity;
+
+  &.animation {
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+  }
+  &.fadein {
+    animation-name: modalFadeIn;
+  }
+  &.fadeout {
+    animation-name: modalFadeOut;
+  }
+}
+
+:global(.ui-modal-content) {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+  will-change: transform;
+
+  &.animation {
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+  }
+  &.zoomin {
+    animation-name: modalZoomIn;
+  }
+  &.zoomout {
+    animation-name: modalZoomOut;
+  }
+  &.large {
+    width: 80vw;
+    min-width: 640px;
+    max-width: 720px;
+  }
+  &.medium {
+    min-width: 480px;
+    max-width: 512px;
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modalZoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.9, .9, .9);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalZoomOut {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale3d(.9, .9, .9);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*------------------- responsive -------------------*/
+
+:global(html.mobile) {
+  & :global(.ui-modal) {
+    & :global(.ui-modal-content) {
+      min-width: 0;
+      max-width: none;
+      width: 100vw;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import "../custom";
+
+/*------------------- Style -------------------*/
+
+:global(.ui-section) {
+  & .header {
+    padding: calc(var(--offset) / 2) calc(var(--offset) / 4) calc(var(--offset) / 2) calc(var(--offset) / 2);
+    &[data-state="after-icon"] {
+      display: flex;
+      align-items: center;
+    }
+    & > h2 {
+      font-size: calc(var(--font-size) * 1.1);
+      font-weight: var(--font-bold);
+      margin: 0;
+    }
+    & > :global(.ui-button) {
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  & > h2 {
+    font-size: calc(var(--font-size) * 1.1);
+    font-weight: var(--font-bold);
+    margin: calc(var(--offset) / 2) 0 0 0;
+    padding: 0 calc(var(--offset) / 2);
+  }
+
+  & .title-local {
+    font-size: calc(var(--font-size) * .8);
+    padding: calc(var(--offset) / 8) calc(var(--offset) / 4) calc(var(--offset) / 8) calc(var(--offset) / 2);
+    &[data-state="after-icon"] {
+      display: flex;
+      align-items: center;
+    }
+    & > span {
+      font-weight: var(--font-bold);
+      text-transform: uppercase;
+      line-height: var(--offset);
+    }
+    & > :global(.ui-button) {
+      margin-left: auto;
+      flex-shrink: 0;
+      transition: transform 200ms ease;
+      /* Collapse */
+      &[data-state="collapse"] {
+        transform: rotate(-90deg);;
+      }
+    }
+  }
+  & .section-wrapper {
+    padding: calc(var(--offset) / 2);
+    /* Collapse */
+    &[data-state="collapse"] {
+      padding: 0;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+  /*------------------- Color -------------------*/
+  &[data-theme="bright"] {
+    & .header {
+      border-bottom: 1px solid color(var(--botticelli) a(60%));
+    }
+    & .title-local {
+      color: var(--nepal);
+      background-color: var(--alabaster);
+      box-shadow: inset 0 -1px 0 color(var(--botticelli) a(10%));
+    }
+    &:not(:first-child) {
+      border-top: 1px solid color(var(--botticelli) a(60%));
+    }
+  }
+  &[data-theme="dark"] {
+    & .header {
+      border-bottom: 1px solid var(--midnight);
+    }
+    & .title-local {
+      color: var(--nepal);
+      background-color: color(var(--midnight) a(60%));
+    }
+    &:not(:first-child) {
+      border-top: 1px solid var(--midnight);
+    }
+  }
+}

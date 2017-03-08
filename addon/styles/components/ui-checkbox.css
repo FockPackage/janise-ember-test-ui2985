@@ -1,0 +1,346 @@
+@import "../custom";
+@import "ui-switch";
+
+/*------------------- Style -------------------*/
+:global(.ui-checkbox) {
+  position: relative;
+  backface-visibility: hidden;
+  & input {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    &:checked {
+      & + label {
+        & > svg {
+          fill: var(--white);
+        }
+      }
+    }
+    /*------------------- Disabled -------------------*/
+    &[disabled] {
+      & + label {
+        cursor: not-allowed;
+        & > span {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+  & label {
+    display: inline-block;
+    font-size: calc(var(--font-size) * .8);
+    position: relative;
+    cursor: pointer;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: calc(var(--font-size) * 1.125);
+    -webkit-user-select: none;
+    user-select: none;
+    border-radius: 1px;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 18px;
+      height: 18px;
+      border-radius: var(--border-radius-m);
+    }
+    & > span {
+      position: relative;
+      margin-left: calc(var(--offset) / 2);
+      padding-left: calc(var(--offset) / 2);
+    }
+    & > svg {
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      fill: transparent;
+    }
+  }
+  /*------------------- Color -------------------*/
+  &.blue {
+    &:not(.switch) {
+      & input {
+        &:checked {
+          & + label {
+            &:before {
+              box-shadow: inset 0 0 0 1px var(--cool-blue);
+            }
+            &:active {
+              &:before {
+                box-shadow: inset 0 0 0 1px var(--cool-blue-active);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.lime {
+    &:not(.switch) {
+      & input {
+        &:checked {
+          & + label {
+            &:before {
+              box-shadow: inset 0 0 0 1px var(--dull-lime);
+            }
+            &:active {
+              &:before {
+                box-shadow: inset 0 0 0 1px var(--dull-lime-active);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  & + :global(.ui-checkbox) {
+    margin-top: calc(var(--offset) / 2);
+  }
+  /*------------------- Switch -------------------*/
+  &.switch {
+  @extend %switch;
+    &[data-state="blank"] {
+      & label {
+        &:hover {
+          background: none !important;
+          box-shadow: none !important;
+        }
+        &:active {
+          background: none !important;
+          box-shadow: none !important;
+        }
+      }
+    @extend %blank;
+    }
+  }
+  /*------------------- Color -------------------*/
+  &[data-theme="bright"] {
+    & input {
+      &[disabled] {
+        & + label {
+          & > span {
+            color: color(var(--fiord) a(50%));
+          }
+        }
+      }
+    }
+    &:not(.switch) {
+      & input {
+        /*------------------- Disabled -------------------*/
+        &[disabled] {
+          &:checked {
+            & + label {
+              &:before {
+                background-color: color(var(--fiord) a(8%));
+              }
+              &:active {
+                &:before {
+                  background-color: color(var(--fiord) a(8%));
+                  box-shadow: inset 0 0 0 1px color(var(--fiord) a(20%));
+                }
+              }
+              & > svg {
+                fill: color(var(--fiord) a(50%));
+              }
+            }
+          }
+          & + label {
+            &:before {
+              background-color: color(var(--fiord) a(8%));
+              box-shadow: inset 0 0 0 1px color(var(--fiord) a(20%));
+            }
+          }
+        }
+      }
+      & label {
+        &:before {
+          box-shadow: inset 0 0 0 1px var(--botticelli);
+        }
+        &:active {
+          background-color: color(var(--light-steel-blue) a(20%));
+          box-shadow: 0 0 0 calc(var(--offset) / 8) color(var(--light-steel-blue) a(20%));
+        }
+      }
+    }
+    &.switch {
+      & label {
+        &:before {
+          background-color: var(--botticelli);
+        }
+        &:after {
+          background-color: var(--white);
+        }
+      }
+    }
+    & input {
+      &[disabled] {
+        & + label {
+          &:before {
+            background-color: color(var(--fiord) a(20%));
+          }
+          &:after {
+            background-color: var(--white);
+          }
+        }
+      }
+    }
+  }
+  &[data-theme="dark"] {
+    & input {
+      &[disabled] {
+        & + label {
+          & > span {
+            color: color(var(--zumthor) a(50%));
+          }
+        }
+      }
+    }
+    &:not(.switch) {
+      & input {
+        /*------------------- Disabled -------------------*/
+        &[disabled] {
+          &:checked {
+            & + label {
+              &:before {
+                background-color: color(var(--zumthor) a(8%));
+              }
+              &:active {
+                &:before {
+                  background-color: color(var(--zumthor) a(8%));
+                  box-shadow: inset 0 0 0 1px color(var(--zumthor) a(20%));
+                }
+              }
+              & > svg {
+                fill: color(var(--zumthor) a(50%));
+              }
+            }
+          }
+          & + label {
+            &:before {
+              background-color: color(var(--zumthor) a(8%));
+              box-shadow: inset 0 0 0 1px color(var(--zumthor) a(20%));
+            }
+          }
+        }
+      }
+      & label {
+        &:before {
+          background-color: color(var(--white) a(8%));
+          box-shadow: inset 0 0 0 1px color(var(--white) a(30%));
+        }
+        &:active {
+          background-color: color(var(--fiord) a(30%));
+          box-shadow: 0 0 0 calc(var(--offset) / 8) color(var(--fiord) a(30%));
+        }
+      }
+    }
+    &.switch {
+      & input {
+        &:checked {
+          & + label {
+            &:after {
+              background-color: var(--white);
+            }
+          }
+        }
+        &[disabled] {
+          & + label {
+            &:before {
+              background-color: color(var(--fiord) a(20%));
+              box-shadow: inset 0 0 0 1px color(var(--fiord) a(80%));
+            }
+            &:after {
+              background-color: var(--fiord);
+              box-shadow: none;
+            }
+          }
+        }
+      }
+      & label {
+        &:before {
+          background-color: color(var(--white) a(8%));
+          box-shadow: inset 0 0 0 1px color(var(--white) a(30%));
+        }
+        &:after {
+          background-color: color(var(--white) a(20%));
+          box-shadow: inset 0 0 0 1px color(var(--white) a(30%));
+        }
+      }
+    }
+  }
+  &[data-theme="bright"],
+  &[data-theme="dark"] {
+    &.blue {
+      & input {
+        &:checked {
+          & + label {
+            &:before {
+              background-color: var(--cool-blue);
+            }
+            &:active {
+              &:before {
+                background-color: var(--cool-blue-active);
+              }
+            }
+          }
+        }
+      }
+    }
+    &.lime {
+      & input {
+        &:checked {
+          & + label {
+            &:before {
+              background-color: var(--dull-lime);
+            }
+            &:active {
+              &:before {
+                background-color: var(--dull-lime-active);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*------------------- responsive -------------------*/
+:global(html.desktop) {
+  & :global(.ui-checkbox) {
+    &[data-theme="bright"] {
+      & label {
+        &:hover {
+          color: var(--midnight);
+          background-color: color(var(--light-steel-blue) a(8%));
+          box-shadow: 0 0 0 calc(var(--offset) / 8) color(var(--light-steel-blue) a(8%));
+        }
+        &:active {
+          background-color: color(var(--light-steel-blue) a(20%));
+          box-shadow: 0 0 0 calc(var(--offset) / 8) color(var(--light-steel-blue) a(20%));
+        }
+      }
+    }
+    &[data-theme="dark"] {
+      & label {
+        &:hover {
+          color: var(--white);
+          background-color: color(var(--fiord) a(10%));
+          box-shadow: 0 0 0 calc(var(--offset) / 8) color(var(--fiord) a(10%));
+        }
+        &:active {
+          background-color: color(var(--fiord) a(30%));
+          box-shadow: 0 0 0 calc(var(--offset) / 8) color(var(--fiord) a(30%));
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,267 @@
+@import "../custom";
+
+:global(.ui-grid) {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  & :global(.column) {
+    flex-grow: 1;
+    display: inline-block;
+    vertical-align: top;
+    & > :global(.ui-pane) {
+      height: 100%;
+    }
+    &:global(.group) {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+  }
+  &:global(.lighter) {
+    & + :global(.ui-grid) {
+      margin-top: calc(var(--offset) / 8) !important;
+    }
+  }
+  &:global(.bold) {
+    & + :global(.ui-grid) {
+      margin-top: calc(var(--offset) / 2) !important;
+    }
+  }
+  &:global(.default) {
+    & + :global(.ui-grid) {
+      margin-top: calc(var(--offset) / 4) !important;
+    }
+  }
+}
+
+/*------------------- responsive -------------------*/
+
+:global(html.desktop) {
+  & :global(.ui-grid) {
+    &:global(.lighter) {
+      margin: calc(var(--offset) / -8);
+      & :global(.column) {
+        padding: calc(var(--offset) / 8);
+        &:global(.group) {
+          margin: calc(var(--offset) / -8);
+        }
+        &:global(.two) {
+          width: calc(12.5% - calc(var(--offset) / 4));
+        }
+        &:global(.trisector) {
+          width: calc(33.33333333% - calc(var(--offset) / 4));
+        }
+        &:global(.four) {
+          width: calc(25% - calc(var(--offset) / 4));
+        }
+        &:global(.six) {
+          width: calc(37.5% - calc(var(--offset) / 4));
+        }
+        &:global(.eight) {
+          width: calc(50% - calc(var(--offset) / 4));
+        }
+        &:global(.ten) {
+          width: calc(62.5% - calc(var(--offset) / 4));
+        }
+        &:global(.twelve) {
+          width: calc(75% - calc(var(--offset) / 4));
+        }
+        &:global(.fourteen) {
+          width: calc(87.5% - calc(var(--offset) / 4));
+        }
+        &:global(.sixteen) {
+          width: calc(100% - calc(var(--offset) / 4));
+        }
+      }
+    }
+    &:global(.bold) {
+      margin: calc(var(--offset) / -2);
+      & :global(.column) {
+        padding: calc(var(--offset) / 2);
+        &:global(.group) {
+          margin: calc(var(--offset) / -2);
+        }
+        &:global(.two) {
+          width: calc(12.5% - var(--offset));
+        }
+        &:global(.trisector) {
+          width: calc(33.33333333% - var(--offset));
+        }
+        &:global(.four) {
+          width: calc(25% - var(--offset));
+        }
+        &:global(.six) {
+          width: calc(37.5% - var(--offset));
+        }
+        &:global(.eight) {
+          width: calc(50% - var(--offset));
+        }
+        &:global(.ten) {
+          width: calc(62.5% - var(--offset));
+        }
+        &:global(.twelve) {
+          width: calc(75% - var(--offset));
+        }
+        &:global(.fourteen) {
+          width: calc(87.5% - var(--offset));
+        }
+        &:global(.sixteen) {
+          width: calc(100% - var(--offset));
+        }
+      }
+    }
+    &:global(.default) {
+      margin: calc(var(--offset) / -4);
+      & :global(.column) {
+        padding: calc(var(--offset) / 4);
+        &:global(.group) {
+          margin: calc(var(--offset) / -4);
+        }
+        &:global(.two) {
+          width: calc(12.5% - calc(var(--offset) / 2));
+        }
+        &:global(.trisector) {
+          width: calc(33.33333333% - calc(var(--offset) / 2));
+        }
+        &:global(.four) {
+          width: calc(25% - calc(var(--offset) / 2));
+        }
+        &:global(.six) {
+          width: calc(37.5% - calc(var(--offset) / 2));
+        }
+        &:global(.eight) {
+          width: calc(50% - calc(var(--offset) / 2));
+        }
+        &:global(.ten) {
+          width: calc(62.5% - calc(var(--offset) / 2));
+        }
+        &:global(.twelve) {
+          width: calc(75% - calc(var(--offset) / 2));
+        }
+        &:global(.fourteen) {
+          width: calc(87.5% - calc(var(--offset) / 2));
+        }
+        &:global(.sixteen) {
+          width: calc(100% - calc(var(--offset) / 2));
+        }
+      }
+    }
+    &:global(.lighter),
+    &:global(.bold),
+    &:global(.default) {
+      & :global(.column) {
+        &:global(.group) {
+          &:global(.two) {
+            width: 12.5%;
+          }
+          &:global(.trisector) {
+            width: 33.33333333%;
+          }
+          &:global(.four) {
+            width: 25%;
+          }
+          &:global(.six) {
+            width: 37.5%;
+          }
+          &:global(.eight) {
+            width: 50%;
+          }
+          &:global(.ten) {
+            width: 62.5%;
+          }
+          &:global(.twelve) {
+            width: 75%;
+          }
+          &:global(.fourteen) {
+            width: 87.5%;
+          }
+          &:global(.sixteen) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+:global(html.tablet) {
+  & :global(.ui-grid) {
+    margin: calc(var(--offset) / -4);
+    & :global(.column) {
+      padding: calc(var(--offset) / 4);
+      width: calc(50% - calc(var(--offset) / 2));
+      &:global(.group) {
+        margin: calc(var(--offset) / -4);
+        &:global(.two) {
+          width: 12.5%;
+        }
+        &:global(.trisector) {
+          width: 33.33333333%;
+        }
+        &:global(.four) {
+          width: 25%;
+        }
+        &:global(.six) {
+          width: 37.5%;
+        }
+        &:global(.eight) {
+          width: 50%;
+        }
+        &:global(.ten) {
+          width: 62.5%;
+        }
+        &:global(.twelve) {
+          width: 75%;
+        }
+        &:global(.fourteen) {
+          width: 87.5%;
+        }
+        &:global(.sixteen) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+:global(html.mobile) {
+  & :global(.ui-grid) {
+    margin: calc(var(--offset) / -4);
+    & :global(.column) {
+      padding: calc(var(--offset) / 4);
+      width: 100%;
+      &:global(.group) {
+        margin: calc(var(--offset) / -4);
+        &:global(.two) {
+          width: 12.5%;
+        }
+        &:global(.trisector) {
+          width: 33.33333333%;
+        }
+        &:global(.four) {
+          width: 25%;
+        }
+        &:global(.six) {
+          width: 37.5%;
+        }
+        &:global(.eight) {
+          width: 50%;
+        }
+        &:global(.ten) {
+          width: 62.5%;
+        }
+        &:global(.twelve) {
+          width: 75%;
+        }
+        &:global(.fourteen) {
+          width: 87.5%;
+        }
+        &:global(.sixteen) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

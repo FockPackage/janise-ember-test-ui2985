@@ -1,0 +1,23 @@
+@import "custom";
+
+.column {
+  position: relative;
+  &:after {
+    background-color: color(var(--botticelli) a(30%));
+    box-shadow: 0 0 0 1px var(--botticelli) inset;
+    content: "";
+    display: block;
+    min-height: calc(var(--offset) * 2);
+  }
+  &:global(.group) {
+    &:after {
+      position: absolute;
+      top: calc(var(--offset) / 2);
+      bottom: calc(var(--offset) / 2);
+      left: calc(var(--offset) / 2);
+      right: calc(var(--offset) / 2);
+      background-color: color(var(--soft-purple) a(10%));
+      box-shadow: 0 0 0 1px color(var(--soft-purple) a(50%)) inset;
+    }
+  }
+}

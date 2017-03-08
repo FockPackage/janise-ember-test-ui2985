@@ -1,0 +1,26 @@
+@import "custom";
+
+.title {
+  & h2 {
+    margin: 0;
+  }
+  & span {
+    font-size: calc(var(--font-size) * .8);
+    color: var(--nepal);
+  }
+  & svg {
+    fill: var(--dull-lime-active);
+    &:first-of-type {
+      margin-left: calc(var(--offset) / 2);
+    }
+  }
+}
+
+.content {
+  & img {
+    margin-top: calc(var(--offset) / 2);
+  }
+  & span {
+    display: block;
+  }
+}

@@ -1,0 +1,10 @@
+{{#each myTabs as |item|}}
+  {{#link-to item.route activeClass=item.activeName}}
+    {{#if (or item.icon item.image)}}
+      {{ui-icon item.icon}}
+    {{/if}}
+    {{#if item.label}}
+      <span>{{item.label}}</span>
+    {{/if}}
+  {{/link-to}}
+{{/each}}

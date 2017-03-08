@@ -1,0 +1,40 @@
+{{#unless (device 'mobile')}}
+  {{#ui-sidebar width='240px' position='left' local-class='sidebar' slideId='0' toggleShow=true slide-enable=true}}
+    {{#ui-sections 'Elements' collapse=true}}
+      {{ui-item 'ui-icon' 'ui-16px-2_favourite-31' route='ui-icon'}}
+      {{ui-item 'ui-button' 'tech-16px-2_socket-europe-2' route='ui-button'}}
+      {{ui-item 'ui-input' 'design-16px-2_text' route='ui-input'}}
+      {{ui-item 'ui-checkbox' 'ui-16px-1_check-square-09' route='ui-checkbox'}}
+      {{ui-item 'ui-radio' 'tech-16px_disk' route='ui-radio'}}
+      {{ui-item 'ui-progressive' 'media-16px-1_image-02' route='ui-progressive'}}
+    {{/ui-sections}}
+    {{#ui-sections 'Collections' collapse=true}}
+      {{ui-item 'ui-notification' 'ui-16px-1_bell-53' route='ui-notification'}}
+      {{ui-item 'ui-table' 'ui-16px-2_tile-55' route='ui-table'}}
+      {{ui-item 'ui-grid' 'ui-16px-2_grid-48' route='ui-grid'}}
+    {{/ui-sections}}
+    {{#ui-sections 'Views' collapse=true}}
+      {{ui-item 'ui-item' 'design-16px_bullet-list-69' route='ui-item'}}
+      {{ui-item 'ui-card' 'media-16px-1_polaroid' route=''}}
+      {{ui-item 'ui-pane' 'tech-16px_tablet-reader-42' route='ui-pane'}}
+    {{/ui-sections}}
+    {{#ui-sections 'Modules' collapse=true}}
+      {{ui-item 'ui-dropdown' 'arrows-16px-3_square-down-06' route='ui-dropdown'}}
+      {{ui-item 'ui-navigation' 'ui-16px-e-2_dock-top' route='ui-navigation'}}
+      {{ui-item 'ui-sidebar' 'ui-16px-e-2_dock-left' route='ui-sidebar'}}
+      {{ui-item 'ui-modal' 'ui-16px-2_enlarge-57' route='ui-modal'}}
+      {{ui-item 'ui-popup' 'ui-16px-2_chat-content' route='ui-popup'}}
+      {{ui-item 'ui-breadcrumbs' 'arrows-16px-4_enlarge-46' route=''}}
+      {{ui-item 'ui-progress' 'ui-16px-1_simple-delete' route='ui-progress'}}
+      {{ui-item 'ui-loader' 'ui-16px-2_menu-dots' route='ui-loader'}}
+      {{ui-item 'ui-pagination' 'ui-16px-2_menu-dots' route='ui-pagination'}}
+      {{ui-item 'ui-tabs' 'ui-16px-2_menu-dots' route='ui-tabs'}}
+    {{/ui-sections}}
+    {{#ui-sections 'Examples' collapse=true}}
+      {{ui-item 'ui-login' 'arrows-16px-3_square-down-06' route='ui-login'}}
+    {{/ui-sections}}
+    {{#ui-sections 'Chart' collapse=true}}
+      {{ui-item 'ui-d3-chart' 'arrows-16px-3_square-down-06' route='ui-d3-chart' currentRouteName=index}}
+    {{/ui-sections}}
+  {{/ui-sidebar}}
+{{/unless}}

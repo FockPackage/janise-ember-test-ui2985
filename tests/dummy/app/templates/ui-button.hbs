@@ -1,0 +1,19 @@
+<section class="preview-container" local-class="button">
+  <div class="preview-introduction">
+    <h2>Button</h2>
+    <p>A button indicates a possible user action</p>
+    <span>Default Setting: size: <i>'medium'</i>, color: <i>'blue'</i>,</span>
+  </div>
+  {{#ui-pane class='ui-pane-preview'}}
+    {{#ui-sidebar width='120px' position='left' as |index subIndex|}}
+      {{ui-item 'Basic' divider=true route='ui-button.index' activeColor='blue' currentRouteName=subIndex}}
+      {{ui-item 'Round' divider=true route='ui-button.round' activeColor='blue' currentRouteName=subIndex}}
+      {{ui-item 'Floating' divider=true route='ui-button.floating' activeColor='blue' currentRouteName=subIndex}}
+      {{ui-item 'Categroy' divider=true route='ui-button.category' activeColor='blue' currentRouteName=subIndex}}
+      {{ui-item 'Tag' divider=true route='ui-button.tag' activeColor='blue' currentRouteName=subIndex}}
+      {{ui-item 'Symbols' divider=true route='ui-button.symbols' activeColor='blue' currentRouteName=subIndex}}
+      {{ui-item 'Text' divider=true route='ui-button.text' activeColor='blue' currentRouteName=subIndex}}
+    {{/ui-sidebar}}
+    {{outlet}}
+  {{/ui-pane}}
+</section>

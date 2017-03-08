@@ -1,0 +1,9 @@
+<div class="ui-modal-background" style={{style}} onclick={{action "decline"}}></div>
+
+<div class="ui-modal-content" local-class="{{size}}">
+  {{#if templateName}}
+    <div>{{partial templateName}}</div>
+  {{else}}
+    {{component "dialog-body" layout=template contextObject=contextObject context=context}}
+  {{/if}}
+</div>

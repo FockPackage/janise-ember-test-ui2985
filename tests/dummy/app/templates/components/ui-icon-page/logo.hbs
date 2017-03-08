@@ -1,0 +1,11 @@
+<section local-class="logo">
+  {{#each icon as |item|}}
+    <div local-class="wrapper">
+      {{ui-icon item.icon 48 48 type='logo' iconColor=item.iconColor fill=item.fill}}
+    </div>
+  {{/each}}
+</section>
+<div class="code">
+  <span>\{{ui-icon</span> <u>'ICON'</u> <i>48</i> <i>48</i> type=<b>'logo'</b> fill=<i>'#E74D89'</i> iconColor=<i>'#B2215A'</i><span>}}</span>
+  <span>\{{ui-icon</span> <u>'ICON'</u> <i>48</i> <i>48</i> type=<b>'logo'</b> fill=<i>'rgba(38,193,201,0.20)'</i> iconColor=<i>'#26C2C9'</i><span>}}</span>
+</div>

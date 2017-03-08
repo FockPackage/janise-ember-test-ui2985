@@ -1,0 +1,47 @@
+<section>
+  {{ui-progress (fake "company.companyName") size='big' color='indicating' percent=true activity=true progress=progress}}
+  <div class="code inSection">
+    <span>\{{ui-progress</span> <u>'LABEL'</u> size=<i>'big'</i> color=<i>'indicating'</i> percent=<i>true</i> activity=<i>true</i> progress=<b>PROGRESS</b><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-progress size='large' color='lime' percent=true progress=progress}}
+  <div class="code inSection">
+    <span>\{{ui-progress</span> size=<i>'large'</i> color=<i>'lime'</i> percent=<i>true</i> progress=<b>PROGRESS</b><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-progress color='grey' progress=progress}}
+  <div class="code inSection">
+    <span>\{{ui-progress</span> color=<i>'grey'</i> progress=<b>PROGRESS</b><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-progress color='grey' progress=progress custom="#26C2C9"}}
+  <div class="code inSection">
+    <span>\{{ui-progress</span> color=<i>'grey'</i> progress=<b>PROGRESS</b> custom=<u>"#26C2C9"</u><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-progress size='small' color='purple' progress=progress}}
+  <div class="code inSection">
+    <span>\{{ui-progress</span> size=<i>'small'</i> color=<i>'purple'</i> progress=<b>PROGRESS</b><span>}}</span>
+  </div>
+</section>
+
+<section>
+  {{ui-progress size='tiny' progress=progress}}
+  <div class="code inSection">
+    <span>\{{ui-progress</span> size=<i>'tiny'</i> progress=<b>PROGRESS</b><span>}}</span>
+
+  </div>
+</section>
+
+<section>
+  {{ui-button color='stroked' icon='ui-16px-1_simple-delete' click=(action 'setProgressDown')}}
+  {{ui-button color='stroked' icon='ui-16px-1_simple-add' click=(action 'setProgressUp')}}
+</section>

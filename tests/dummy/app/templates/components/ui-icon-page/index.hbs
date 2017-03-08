@@ -1,0 +1,17 @@
+
+<section local-class="svg-icon">
+  {{#each icon as |item|}}
+    <div local-class="wrapper">
+      <div local-class="svg-container">
+        {{ui-icon item.icon}}
+      </div>
+    </div>
+  {{/each}}
+</section>
+<div local-class="attr">
+  <span local-class="hover">{{hrefText}}</span>
+  <span>Click on icon copy the <strong>SVG ID</strong> to the clipboard</span>
+</div>
+<div class="code">
+  <span>\{{ui-icon</span> <u>'ICON'</u><span>}}</span>
+</div>

@@ -1,0 +1,22 @@
+{{content.item 'ui-icon' 'ui-16px-2_favourite-31' active=(eq config.label "ui-icon")}}
+{{content.item 'ui-button' 'tech-16px-2_socket-europe-2' active=(eq config.label "ui-button")}}
+{{content.item 'ui-input' 'design-16px-2_text' active=(eq config.label "ui-input")}}
+{{content.item 'ui-checkbox' 'ui-16px-1_check-square-09' active=(eq config.label "ui-checkbox")}}
+<div class="divider"></div>
+{{#content.dropdown
+  text="sub-dropdown"
+  icon='ui-16px-3_heart'
+  horizontalPosition="auto"}}
+  {{content.item 'ui-dropdown' 'arrows-16px-3_square-down-06' active=(eq config.label "ui-dropdown")}}
+  {{content.item 'ui-navigation' 'ui-16px-e-2_dock-top'  active=(eq config.label "ui-navigation")}}
+  {{content.item 'ui-sidebar' 'ui-16px-e-2_dock-left' active=(eq config.label "ui-sidebar")}}
+  <div class="divider"></div>
+  {{#content.dropdown
+    text="sub-dropdown"
+    icon='ui-16px-3_heart'
+    horizontalPosition="auto"}}
+    {{content.item 'ui-dropdown' 'arrows-16px-3_square-down-06' active=(eq config.label "ui-dropdown")}}
+    {{content.item 'ui-navigation' 'ui-16px-e-2_dock-top'  active=(eq config.label "ui-navigation")}}
+    {{content.item 'ui-sidebar' 'ui-16px-e-2_dock-left' active=(eq config.label "ui-sidebar")}}
+  {{/content.dropdown}}
+{{/content.dropdown}}

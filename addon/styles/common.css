@@ -1,0 +1,17 @@
+@import "./custom";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: var(--font-size);
+  font-style: normal;
+  line-height: normal;
+  /* Partially Supported Styles */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}

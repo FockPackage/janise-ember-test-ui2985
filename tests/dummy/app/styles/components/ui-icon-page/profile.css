@@ -1,0 +1,12 @@
+.profile {
+  & > div {
+    &:not(:global(.code)) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.wrapper {
+  padding: .5rem;
+}

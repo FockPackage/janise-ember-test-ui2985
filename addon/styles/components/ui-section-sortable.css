@@ -1,0 +1,37 @@
+@import "../custom";
+
+.sortable-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--catalina-blue);
+
+  & > div {
+    position: relative;
+    flex-grow: 1;
+    width: 50%;
+    min-height: 120px;
+    margin: 12px;
+  }
+
+  & [data-handle='handle'] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+
+    &:hover {
+      cursor: pointer;
+      cursor: -webkit-grab;
+    }
+
+    &:active {
+      cursor: -webkit-grabbing;
+    }
+  }
+}

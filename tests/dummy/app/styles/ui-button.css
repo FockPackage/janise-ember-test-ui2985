@@ -1,0 +1,8 @@
+@import "custom";
+
+.button {
+  & :global(.ui-button) {
+    vertical-align: top;
+    margin-bottom: .5rem;
+  }
+}

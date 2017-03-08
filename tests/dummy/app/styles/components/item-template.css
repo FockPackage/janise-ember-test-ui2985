@@ -1,0 +1,54 @@
+@import "custom";
+
+.section {
+  padding: 0 !important;
+  & > div {
+    position: relative;
+    padding: 1rem 70% 1rem 1rem;
+    border-bottom: 1px solid color(var(--nepal) a(30%));
+    &:before {
+      position: absolute 0 0 0 auto;
+      content: '';
+      width: calc(70% - 1rem);
+      background-color: color(var(--nepal) a(10%));
+    }
+  }
+  & pre {
+    width: 100%;
+  }
+}
+
+.divider {
+  padding: 0 70% 0 0 !important;
+  &:before {
+    width: 70% !important;
+  }
+}
+
+.custom {
+  & svg {
+    fill: var(--dull-lime);
+  }
+  & span {
+    display: block;
+    margin-top: calc(var(--offset) / 4);
+  }
+}
+
+:global(html.mobile) {
+  & .section {
+    & > div {
+      padding: 1rem;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  & .divider {
+    padding: 0 !important;
+    &:before {
+      width: 70% !important;
+    }
+  }
+}

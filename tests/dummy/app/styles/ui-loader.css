@@ -1,0 +1,8 @@
+.loader {
+  & :global(.ui-pane) {
+    & :global(.pane-contents) {
+      padding: 2rem 0;
+      text-align: center;
+    }
+  }
+}

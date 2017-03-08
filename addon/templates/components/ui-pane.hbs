@@ -1,0 +1,75 @@
+{{#if isShow}}
+  {{#if headerImage}}
+    {{ui-progressive headerImage headerImageThumbnail ratio}}
+  {{/if}}
+  {{#if (or headerCustom icon image title subTitle controlCustom close collapse draggable slide)}}
+    <header local-class='{{headerSize}}' data-state="{{state}}">
+      {{#if headerCustom}}
+        <div local-class='header custom'>
+          {{yield 'header'}}
+        </div>
+      {{else}}
+        <div local-class='header'>
+          {{#if (or icon image)}}
+            {{ui-icon icon=icon size=size viewBox=viewBox type=type image=image radius=radius color=color fill=fill iconColor=iconColor}}
+          {{/if}}
+          {{#if (or title subTitle)}}
+            <div local-class="title">
+              {{#if title}}
+                <h3>{{title}}</h3>
+              {{/if}}
+              {{#if subTitle}}
+                <span>
+                 {{#if subIcon}}
+                   {{ui-icon icon=subIcon size='12'}}
+                 {{/if}}
+                  {{subTitle}}
+              </span>
+              {{/if}}
+            </div>
+          {{/if}}
+        </div>
+      {{/if}}
+
+      {{#if controlCustom}}
+        <div local-class='control custom'>
+          {{yield 'control'}}
+        </div>
+      {{else}}
+        <div local-class='control'>
+          {{#if close}}
+            {{ui-button size='large' icon='ui-16px-1_simple-remove' onClick=(action 'handleClose')}}
+          {{/if}}
+          {{#if collapse}}
+            {{ui-button size='large'state=(if collapseState 'open' 'collapse') icon='arrows-16px-1_minimal-down' onClick=(action 'handleCollapse')}}
+          {{/if}}
+          {{#if draggable}}
+            {{ui-button local-class='draggable' class='handle' size='large' icon='ui-16px-2_grid-50' onClick=""}}
+          {{/if}}
+          {{#if slide}}
+            {{ui-button class="slidePrev" size='large' icon='arrows-16px-1_small-triangle-left' onClick=(action 'handleSlidePrev')}}
+            {{ui-button class="slideNext" size='large' icon='arrows-16px-1_small-triangle-right' onClick=(action 'handleSlideNext')}}
+          {{/if}}
+        </div>
+      {{/if}}
+    </header>
+  {{/if}}
+
+  {{#if slide}}
+    <div class="pane-contents" local-class="slide">
+      <div class="slide-container">
+        <div class="swiper-wrapper">
+          {{yield 'content'}}
+        </div>
+        {{#if pagination}}
+          <div class="swiper-pagination"></div>
+        {{/if}}
+      </div>
+    </div>
+  {{else}}
+    <div class="pane-contents" data-state={{if collapseState 'open' 'collapse'}}>
+      {{yield 'content'}}
+    </div>
+  {{/if}}
+
+{{/if}}

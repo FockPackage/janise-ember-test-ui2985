@@ -1,0 +1,23 @@
+.sidebar {
+  flex-shrink: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: margin 400ms cubic-bezier(0.86, 0, 0.07, 1), visibility 400ms cubic-bezier(0.86, 0, 0.07, 1);
+  &[data-slide] {
+    visibility: hidden;
+    margin-left: -240px;
+  }
+  &[data-slide="left"] {
+    visibility: visible !important;
+    margin-left: 0 !important;
+  }
+  /*------------------- Theme -------------------*/
+  &[data-theme="bright"] {
+    border-right: 1px solid var(--botticelli);
+    background-color: var(--white);
+  }
+  &[data-theme="dark"] {
+    border-right: 1px solid var(--fiord);
+    background-color: var(--catalina-blue);
+  }
+}

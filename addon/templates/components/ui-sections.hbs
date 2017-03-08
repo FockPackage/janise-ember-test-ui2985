@@ -1,0 +1,36 @@
+{{#if (or header headerIcon)}}
+  <div local-class="header" data-state={{afterIcon}}>
+    <h2>{{header}}</h2>
+    {{#if headerIcon}}
+      {{ui-button color='transparent' size='small' icon=headerIcon}}
+    {{/if}}
+  </div>
+{{/if}}
+{{#if label}}
+  <div local-class="title-local" data-state={{afterIcon}}>
+    <span>{{label}}</span>
+    {{#if collapse}}
+      {{ui-button color='transparent' size='small' icon='arrows-16px-1_minimal-down' state=(if collapseState 'open' 'collapse') onClick=(action 'handleCollapse')}}
+    {{/if}}
+    {{#if (or control icon)}}
+      {{#ui-button control color='transparent' size='small' customText=customText}}
+        {{#if icon}}
+          {{ui-icon icon 16 16 iconColor=customColor}}
+        {{/if}}
+      {{/ui-button}}
+    {{/if}}
+  </div>
+{{/if}}
+
+{{#if title}}
+  <h2>
+    {{title}}
+    {{#if titleIcon}}
+      {{ui-button color='transparent' size='small' icon=titleIcon customText=customText}}
+    {{/if}}
+  </h2>
+{{/if}}
+
+<div local-class="section-wrapper" data-state={{if collapseState 'open' 'collapse'}}>
+  {{yield}}
+</div>

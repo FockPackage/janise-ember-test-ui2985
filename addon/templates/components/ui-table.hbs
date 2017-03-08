@@ -1,0 +1,91 @@
+<table>
+  {{#if table.theads}}
+    <thead>
+    <tr>
+      {{#if sortIndex}}
+        <th>{{ui-item '序号'}}</th>
+      {{/if}}
+      {{#each table.theads as |item index|}}
+        <th>
+          <div local-class="thead" data-state={{if (eq sortColIndex index) (concat sortState 'ending')}} onclick={{action "handleClickSort" item.key index}}>
+            {{ui-item item.label icon=item.icon}}
+            {{ui-icon 'arrows-16px-1_tail-triangle-up' 10}}
+          </div>
+        </th>
+      {{/each}}
+      {{#if hasBlock}}
+        <th>
+          <div local-class="thead">
+            {{ui-item '操作' icon='ui-16px-1_settings-gear-63'}}
+          </div>
+        </th>
+      {{/if}}
+    </tr>
+    </thead>
+  {{/if}}
+  <tbody>
+  {{#each tbodys as |body index|}}
+    <tr local-class={{if (eq rowSelectIndex index) 'active'}} data-row={{index}} onclick={{action 'select' index body}}>
+      {{#if sortIndex}}
+        <td>{{ui-item (sum index 1)}}</td>
+      {{/if}}
+      {{#each body as |data index|}}
+        <td data-col={{index}}>
+          {{#if data.button}}
+            {{ui-button data.button.label
+                        icon=data.button.icon
+                        color=data.button.color
+                        size=data.button.size}}
+          {{/if}}
+          {{#if data.item}}
+            {{ui-item data.item.label
+                      align=data.item.align
+                      icon=data.item.icon
+                      image=data.item.image
+                      radius=data.item.radius
+                      subLabel=data.item.subLabel
+                      subIcon=data.item.subIcon
+                      type=(if data.item.image 'image')
+                      size=data.item.size
+                      viewBox=data.item.viewBox
+                      href=data.item.href
+                      route=data.item.route
+                      badges=data.item.badges
+                      tagName=(if (or data.item.href data.item.route) 'a' 'div')}}
+          {{/if}}
+          {{#if data.dropdown}}
+            {{#ui-dropdown text=data.dropdown.label
+                           color=data.dropdown.color
+                           size=data.dropdown.size
+                           icon=data.dropdown.icon
+                           horizontalPosition=data.dropdown.ichorizontalPosition as |config|}}
+              <div class="option-contents">
+                {{#each data.dropdown.items as |item|}}
+                  {{ui-item
+                    item.label
+                    icon=item.icon
+                    active=(eq config.text item.label)
+                    onClick=(action config.onClick item.label item.icon)
+                  }}
+                {{/each}}
+              </div>
+            {{/ui-dropdown}}
+          {{/if}}
+          {{#if data.text}}
+            <span>{{data.text.label}}</span>
+          {{/if}}
+          {{#if data.currentRow}}
+            {{yield data.currentRow}}
+          {{/if}}
+        </td>
+      {{/each}}
+
+      {{#if drag}}
+        <td>
+          {{ui-button color='transparent' icon='ui-16px-2_grid-50' local-class='draggable'}}
+        </td>
+      {{/if}}
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

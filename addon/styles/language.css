@@ -1,0 +1,15 @@
+html[lang=zh-CN] body {
+  font-family: 'PingFang SC', 'Microsoft Yahei', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
+}
+
+html[lang=zh-TW] body {
+  font-family: "MHei", "Helvetica Neue", "Helvetica", "Arial", "Verdana", "sans-serif";
+}
+
+html[lang=ja-JP] body {
+  font-family: "Apple TP", "Helvetica Neue", "Helvetica", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Arial", "Verdana", "sans-serif";
+}
+
+html[lang=en-US] body {
+  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
